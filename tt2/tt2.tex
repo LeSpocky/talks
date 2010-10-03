@@ -1,0 +1,87 @@
+% $Id$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Documentclass und Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{atbegshi}           % workaround for newer PGF versions
+\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+% https://sourceforge.net/tracker/index.php?func=detail&aid=1848912&group_id=92412&atid=600660
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}							
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage[ngerman]{babel}		
+\usepackage[babel,english=american,german=guillemets]{csquotes}	% Französische
+\usepackage{microtype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Vorbereitungen für beamer 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useinnertheme{default}
+\useoutertheme{infolines}
+%\usecolortheme[rgb={0.28,0.37,0.52}]{structure}
+\usecolortheme[rgb={0.18,0.23,0.33}]{structure}
+%\usecolortheme{beaver}
+\usefonttheme{structurebold}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Titel, Autor, Datum
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[Template Toolkit 2]{Schnell, statisch, sicher} 
+\subtitle{Template Toolkit 2 für Webseiten (und andere Späße)}
+\author{Alexander Dahl} 
+\institute[lespocky.de]{\url{http://www.lespocky.de/}}
+\date{2010-10-13}
+\subject{subj}
+\keywords{foo, bar}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Dokument
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document} 
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\section{Section 1}
+
+\begin{frame}{Motivation}
+    \begin{quotation}
+        Ein Truhe ist eine Truhe ist eine Truhe.
+    \end{quotation}
+    \pause
+	\begin{itemize}
+		\item foo
+		\item bar (baz \dots)
+		\item \textquote{curly} history :-(
+	\end{itemize}
+\end{frame}
+
+\subsection{1.1}
+
+\begin{frame}{Konzept}
+	\begin{itemize}
+		\item dies
+		\item das
+		\item jenes
+	\end{itemize}
+\end{frame}
+
+\section{Section Two}
+
+\subsection{2.1}
+
+\begin{frame}{Aktueller Stand (Alpha)}
+    \emph{add content here}
+\end{frame}
+
+\subsection{2.2}
+
+\begin{frame}{Kontakt}
+    \begin{itemize}
+        \item \url{http://www.lespocky.de/}
+        \item \emph{alex@antiblau.de}
+    \end{itemize}
+\end{frame}
+
+\end{document}

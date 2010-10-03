@@ -1,0 +1,10 @@
+syntax: glob
+
+**.swp
+**.aux
+**.log
+**.nav
+**.out
+**.pdf
+**.snm
+**.toc
