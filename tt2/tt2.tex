@@ -43,36 +43,91 @@
 	\titlepage
 \end{frame}
 
-\section{Section 1}
+\section{Vorneweg}
 
-\begin{frame}{Motivation}
-    \begin{quotation}
-        Ein Truhe ist eine Truhe ist eine Truhe.
-    \end{quotation}
+\begin{frame}{Überblick}
+    \tableofcontents
+\end{frame}
+
+\section{Einleitung}
+
+\subsection{Ziel}
+
+\begin{frame}{Statisch, schnell, sicher}
+    \begin{block}{Statisch}
+        \begin{itemize}
+            \item \emph{seite.htm} als Datei auf dem Webserver
+            \item keine dynamische Seitenerzeugung
+        \end{itemize}
+    \end{block}
     \pause
-	\begin{itemize}
-		\item foo
-		\item bar (baz \dots)
-		\item \textquote{curly} history :-(
-	\end{itemize}
+    \begin{block}{Schnell}
+        \begin{itemize}
+            \item httpd liest nur Datei und schickt Daten (Caching möglich)
+            \item kein webserverseitiges Erzeugen der Seiten
+            \item keine zeitintensiven Datenbankanfragen
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Sicher}
+        \begin{itemize}
+            \item nur lesende Nutzerinteraktion
+            \item keine Sicherheitslücken durch dynamische Skriptsprachen
+            \item keine SQL-Injections
+        \end{itemize}
+    \end{block}
 \end{frame}
 
-\subsection{1.1}
+\subsection{Eignung}
 
-\begin{frame}{Konzept}
-	\begin{itemize}
-		\item dies
-		\item das
-		\item jenes
-	\end{itemize}
+\begin{frame}{Wofür?}
+    \begin{block}{Beispiele}
+        \begin{itemize}
+            \item statischer Content ;-)
+            \item Bilderalbum
+            \item Vereinsseite
+            \item HowTo-Sammlung
+            \item \dots
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Aber}
+        \begin{itemize}
+            \item kein \textquote{user generated content} (z.\,B. Kommentare)
+        \end{itemize}
+    \end{block}
 \end{frame}
 
-\section{Section Two}
+\subsection{Probleme}
 
-\subsection{2.1}
+\begin{frame}{Herausforderungen}
+    \begin{block}{\textquote{Inhalt} der (X)HTML-Datei}
+        \begin{itemize}
+            \item sich wiederholende Abschnitte
+                \begin{itemize}
+                    \item HTML-Header (Titel, Links zu CSS usw.)
+                    \item Seitenkopf
+                    \item Seitenfuß
+                \end{itemize}
+            \pause
+            \item Navigationselemente (Menü)
+            \item Struktuelemente um den Content herum (\texttt{<div>}-Layout)
+        \end{itemize}
+        \pause
+        \begin{block}{Also}
+            \emph{\textquote{nerviges} Drumherum lenkt vom Inhalt ab}
+        \end{block}
+    \end{block}
+\end{frame}
 
-\begin{frame}{Aktueller Stand (Alpha)}
-    \emph{add content here}
+\section{Template Toolkit}
+
+\subsection{About TT2}
+
+\begin{frame}{Hello [\% world \%]!}
+    \begin{itemize}
+        \item schnelles, flexibles, erweiterbares Template Processing System
+    \end{itemize}
 \end{frame}
 
 \subsection{2.2}
