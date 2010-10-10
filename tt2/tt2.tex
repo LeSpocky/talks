@@ -1,6 +1,5 @@
-% $Id$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Documentclass und Packages
+%%% documentclass and packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{atbegshi}           % workaround for newer PGF versions
 \documentclass[hyperref={pdfpagelabels=false}]{beamer}
@@ -10,13 +9,34 @@
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
 \usepackage[ngerman]{babel}		
-\usepackage[babel,english=american,german=guillemets]{csquotes}	% Französische
+\usepackage[babel,english=american,german=guillemets]{csquotes}	% french
 \usepackage{microtype}
-%\usepackage{listings}
-%\lstloadlanguages{HTML}
+
+% colors for listings
+\definecolor{lightergray}{gray}{.95}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkerblue}{rgb}{0,0,0.4}
+\definecolor{darkergreen}{rgb}{0,0.4,0}
+\definecolor{darkerred}{rgb}{0.4,0,0}
+
+\usepackage{listings}
+\lstloadlanguages{HTML,XML}
+\lstset{
+    basicstyle=\ttfamily\small\mdseries,
+    keywordstyle=\bfseries\color{darkblue},
+    identifierstyle=,
+    commentstyle=\color{darkgray},
+    stringstyle=\itshape\color{darkred},
+    frame=none,
+    showstringspaces=false,
+    tabsize=4,
+    backgroundcolor=\color{lightergray},
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Vorbereitungen für beamer 
+%%% preparations for beamer 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \useinnertheme{default}
 \useoutertheme{infolines}
@@ -26,7 +46,7 @@
 \usefonttheme{structurebold}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Titel, Autor, Datum
+%%% title, author, date
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title[Template Toolkit 2]{Schnell, statisch, sicher} 
 \subtitle{Template Toolkit 2 für Webseiten (und andere Späße)}
@@ -37,7 +57,7 @@
 \keywords{foo, bar}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Dokument
+%%% document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document} 
 
@@ -141,10 +161,12 @@
 
 \subsection{Hello World}
 
-\begin{frame}{Hello [\% world \%]!}
-    % [% INCLUDE header title="My first example" %]
-    % <html>
-    %
+\begin{frame}[fragile]
+    \frametitle{Hello [\% world \%]!}
+    \begin{lstlisting}[language=HTML]
+    [% INCLUDE header title="My first example" %]
+    <html>
+    \end{lstlisting} 
 \end{frame}
 
 \subsection{Syntax}
@@ -198,8 +220,31 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}
-    \emph{add template code of one description file here}
+\begin{frame}[fragile]{Template für KDE}
+    \begin{lstlisting}[
+        language=XML,
+        basicstyle=\ttfamily\scriptsize\mdseries,
+        breaklines=true,
+    ]
+[% PROCESS smileys.tt2 %]
+<?xml version='1.0'?>
+<!-- Theme created with penguineering tools! - http://tools.penguineering.com/ -->
+<messaging-emoticon-map>
+[% FOREACH smiley IN smileys %]
+<emoticon file="[% smiley.basename %]">
+[% FOREACH alias IN smiley.aliases -%]
+    <string>[% FILTER replace('<','&lt;') %]
+[%- FILTER replace('>','&gt;') %]
+[%- FILTER replace('&','&amp;') %]
+[%- alias -%]
+[% END -%]
+[% END -%]
+[% END %]</string>
+[% END -%]
+</emoticon>
+[% END %]
+</messaging-emoticon-map>
+    \end{lstlisting}
 \end{frame}
 
 \section*{Solang die dicke Frau noch singt \dots}
