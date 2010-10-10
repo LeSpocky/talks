@@ -188,11 +188,58 @@
 \end{frame}
 
 \begin{frame}{Aufteilung der Template-Dateien}
-    \emph{ls und bisschen Beschreibung}
+    \begin{block}{public\_html}
+        \begin{itemize}
+            \item \emph{include}
+                \begin{itemize}
+                    \item common\_footer
+                    \item common\_h1
+                    \item common\_html\_header
+                    \item common\_main\_navigation
+                    \item common\_topnav
+                    \item globals
+                    \item match\_tt2name
+                    \item section\_definition
+                    \item wrapper\_yaml
+                \end{itemize}
+            \item \emph{src}
+                \begin{itemize}
+                    \item index.tt2
+                    \item lhimpres.tt2
+                    \item \dots
+                \end{itemize}
+        \end{itemize}
+    \end{block}
 \end{frame}
 
-\begin{frame}{Einblick in ein Template}
-    \emph{TT2-Quellcode nackt}
+\begin{frame}[fragile]{Einblick in ein Template}
+    \begin{lstlisting}[
+        language=HTML,
+        basicstyle=\ttfamily\scriptsize\mdseries,
+        breaklines=true,
+    ]
+[%- PROCESS section_definition %]
+[%- PROCESS match_tt2name %]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+[%  INCLUDE common_html_header %]
+<meta name="keywords" content="impressum" />
+<title>[% title_1 %] :: [% this_section.title %]</title>
+</head>
+<body>
+[% WRAPPER wrapper_yaml %]
+
+    <h2>[% this_section.title %]</h2>
+
+    <p>Dies ist ein Absatz mit <a 
+        href="http://www.lespocky.de/">Link</a>.</p>
+
+[% END %]
+</body>
+</html>
+    \end{lstlisting}
 \end{frame}
 
 \subsection{Smiley-Theme-Generator}
@@ -255,6 +302,9 @@
         \item \url{http://blog.antiblau.de/}
         \item \emph{alex@antiblau.de}
     \end{itemize}
+
+    \vspace{1em}
+    Folien unter \emph{Creative Commons BY-NC-SA}
 \end{frame}
 
 \end{document}
