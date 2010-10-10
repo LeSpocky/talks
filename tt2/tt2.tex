@@ -12,6 +12,8 @@
 \usepackage[ngerman]{babel}		
 \usepackage[babel,english=american,german=guillemets]{csquotes}	% Französische
 \usepackage{microtype}
+%\usepackage{listings}
+%\lstloadlanguages{HTML}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Vorbereitungen für beamer 
@@ -30,7 +32,7 @@
 \subtitle{Template Toolkit 2 für Webseiten (und andere Späße)}
 \author{Alexander Dahl} 
 \institute[lespocky.de]{\url{http://www.lespocky.de/}}
-\date{2010-10-13}
+\date{2010-10-11}
 \subject{subj}
 \keywords{foo, bar}
 
@@ -56,15 +58,15 @@
 \begin{frame}{Statisch, schnell, sicher}
     \begin{block}{Statisch}
         \begin{itemize}
-            \item \emph{seite.htm} als Datei auf dem Webserver
-            \item keine dynamische Seitenerzeugung
+            \item \emph{seite.htm} als fertige Datei
+            \item keine dynamische Seitenerzeugung auf dem Webserver
         \end{itemize}
     \end{block}
     \pause
     \begin{block}{Schnell}
         \begin{itemize}
             \item httpd liest nur Datei und schickt Daten (Caching möglich)
-            \item kein webserverseitiges Erzeugen der Seiten
+%            \item kein webserverseitiges Erzeugen der Seiten
             \item keine zeitintensiven Datenbankanfragen
         \end{itemize}
     \end{block}
@@ -124,17 +126,90 @@
 
 \subsection{About TT2}
 
-\begin{frame}{Hello [\% world \%]!}
+\begin{frame}{Template Toolkit 2 im Überblick}
     \begin{itemize}
         \item schnelles, flexibles, erweiterbares Template Processing System
+        \item ausgereift, zuverlässig, gut dokumentiert
+        \pause
+        \item freie, offene Software, plattformunabhängig (Perl)
+        \item kein Wissen über \emph{Perl} oder \emph{C} notwendig
+        \pause
+        \item Trennung von Inhalt, Nutzerschnittstelle, Anwendungscode und Daten
+        \item dynamische Inhaltserzeugung möglich (bspw. mit Apache/mod\_perl)
+        \pause
+        \item Vorverarbeitung für HTML, POD, \LaTeX, PostScript, \emph{you name it} \dots
     \end{itemize}
 \end{frame}
 
-\subsection{2.2}
+\subsection{Hello World}
+
+\begin{frame}{Hello [\% world \%]!}
+    % [% INCLUDE header title="My first example" %]
+    % <html>
+    %
+\end{frame}
+
+\subsection{Syntax}
+
+\begin{frame}{Noch ein Beispiel}
+    % [% WRAPPER %]
+\end{frame}
+
+\begin{frame}{Schleifen}
+    \emph{aus about.html}
+\end{frame}
+
+\section{Anwendungsbeispiele}
+
+\subsection{lespocky.de}
+
+\begin{frame}{Eine statische Homepage -- lespocky.de}
+    \emph{add screenshot here}
+\end{frame}
+
+\begin{frame}{Aufteilung der Template-Dateien}
+    \emph{ls und bisschen Beschreibung}
+\end{frame}
+
+\begin{frame}{Einblick in ein Template}
+    \emph{TT2-Quellcode nackt}
+\end{frame}
+
+\subsection{Smiley-Theme-Generator}
+
+\begin{frame}{Smileys für alle}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}<2->
+            \begin{itemize}
+                \item Emoticon-Themes für Instant Messenger
+                \item \emph{eine} Beschreibungsdatei
+                \item Build-Skript
+                \item derzeit fertige Templates für
+                    \begin{itemize}
+                        \item Adium
+                        \item KDE (Kopete, Choqok)
+                        \item Miranda
+                        \item Pidgin
+                        \item Psi
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}<1->
+            \emph{add screenshot here}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \emph{add template code of one description file here}
+\end{frame}
+
+\section{Solang die dicke Frau noch singt \dots}
 
 \begin{frame}{Kontakt}
     \begin{itemize}
         \item \url{http://www.lespocky.de/}
+        \item \url{http://blog.antiblau.de/}
         \item \emph{alex@antiblau.de}
     \end{itemize}
 \end{frame}
