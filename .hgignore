@@ -8,5 +8,6 @@ syntax: glob
 **.pdf
 **.snm
 **.toc
+**.vrb
 
 **tmp.diff

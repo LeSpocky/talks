@@ -10,7 +10,7 @@
 \usepackage{textcomp}
 \usepackage[ngerman]{babel}		
 \usepackage[babel,english=american,german=guillemets]{csquotes}	% french
-\usepackage{microtype}
+%\usepackage{microtype}
 
 % colors for listings
 \definecolor{lightergray}{gray}{.95}
@@ -44,6 +44,12 @@
 \usecolortheme[rgb={0.18,0.23,0.33}]{structure}
 %\usecolortheme{beaver}
 \usefonttheme{structurebold}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% images
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pgfdeclareimage[width=\textwidth]{lespockydeimpressum}{lespocky.de_impressum}
+\pgfdeclareimage[width=0.6\textwidth]{psituxsmileybeispiel}{psi_tux_smiley_beispiel}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% title, author, date
@@ -83,7 +89,8 @@
     \pause
     \begin{block}{Schnell}
         \begin{itemize}
-            \item httpd liest nur Datei und schickt Daten (Caching möglich)
+            \item httpd liest nur Datei und schickt Daten (Caching
+                möglich)
 %            \item kein webserverseitiges Erzeugen der Seiten
             \item keine zeitintensiven Datenbankanfragen
         \end{itemize}
@@ -92,7 +99,8 @@
     \begin{block}{Sicher}
         \begin{itemize}
             \item nur lesende Nutzerinteraktion
-            \item keine Sicherheitslücken durch dynamische Skriptsprachen
+            \item keine Sicherheitslücken durch dynamische
+                Skriptsprachen
             \item keine SQL-Injections
         \end{itemize}
     \end{block}
@@ -113,7 +121,8 @@
     \pause
     \begin{block}{Aber}
         \begin{itemize}
-            \item kein \textquote{user generated content} (z.\,B. Kommentare)
+            \item kein \textquote{user generated content} (z.\,B.
+                Kommentare)
         \end{itemize}
     \end{block}
 \end{frame}
@@ -131,7 +140,8 @@
                 \end{itemize}
             \pause
             \item Navigationselemente (Menü)
-            \item Strukturelemente um den Content herum (\texttt{<div>}-Layout)
+            \item Strukturelemente um den Content herum
+                (\texttt{<div>}-Layout)
         \end{itemize}
         \pause
         \begin{block}{Also}
@@ -146,16 +156,20 @@
 
 \begin{frame}{Template Toolkit 2 im Überblick}
     \begin{itemize}
-        \item schnelles, flexibles, erweiterbares Template Processing System
+        \item schnelles, flexibles, erweiterbares Template Processing
+            System
         \item ausgereift, zuverlässig, gut dokumentiert
         \pause
         \item freie, offene Software, plattformunabhängig (Perl)
         \item kein Wissen über \emph{Perl} oder \emph{C} notwendig
         \pause
-        \item Trennung von Inhalt, Nutzerschnittstelle, Anwendungscode und Daten
-        \item dynamische Inhaltserzeugung möglich (bspw. mit Apache/mod\_perl)
+        \item Trennung von Inhalt, Nutzerschnittstelle, Anwendungscode
+            und Daten
+        \item dynamische Inhaltserzeugung möglich (bspw. mit
+            Apache/mod\_perl)
         \pause
-        \item Vorverarbeitung für HTML, POD, \LaTeX, PostScript, \emph{you name it} \dots
+        \item Vorverarbeitung für HTML, POD, \LaTeX, PostScript,
+            \emph{you name it} \dots
     \end{itemize}
 \end{frame}
 
@@ -184,7 +198,7 @@
 \subsection{lespocky.de}
 
 \begin{frame}{Eine statische Homepage -- lespocky.de}
-    \emph{add screenshot here}
+    \pgfuseimage{lespockydeimpressum}
 \end{frame}
 
 \begin{frame}{Aufteilung der Template-Dateien}
@@ -246,7 +260,7 @@
 
 \begin{frame}{Smileys für alle}
     \begin{columns}
-        \begin{column}{0.6\textwidth}<2->
+        \begin{column}{0.4\textwidth}<2->
             \begin{itemize}
                 \item Emoticon-Themes für Instant Messenger
                 \item \emph{eine} Beschreibungsdatei
@@ -261,8 +275,10 @@
                     \end{itemize}
             \end{itemize}
         \end{column}
-        \begin{column}{0.4\textwidth}<1->
-            \emph{add screenshot here}
+        \begin{column}{0.6\textwidth}<1->
+            \begin{centering}
+                \pgfuseimage{psituxsmileybeispiel}
+            \end{centering}
         \end{column}
     \end{columns}
 \end{frame}
@@ -304,7 +320,11 @@
     \end{itemize}
 
     \vspace{1em}
-    Folien unter \emph{Creative Commons BY-NC-SA}
+    \small
+    Die Folien sind freigegeben unter \emph{Creative Commons
+    Namensnennung-Nicht kommerziell-Weitergabe unter gleichen
+    Bedingungen 3.0 Deutschland Lizenz} (BY-NC-SA).
+    \normalsize
 \end{frame}
 
 \end{document}
