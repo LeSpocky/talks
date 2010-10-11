@@ -175,22 +175,92 @@
 
 \subsection{Hello World}
 
-\begin{frame}[fragile]
-    \frametitle{Hello [\% world \%]!}
-    \begin{lstlisting}[language=HTML]
-    [% INCLUDE header title="My first example" %]
-    <html>
+\begin{frame}[fragile]{Hallo [\% Welt \%]!}
+    \begin{lstlisting}[
+        language=HTML,
+        basicstyle=\ttfamily\normalsize\mdseries,
+    ]
+[% INCLUDE header title="Ein erstes Beispiel" %]
+<p>
+  Hallo Welt!
+</p>
+[% INCLUDE footer copyright="2010 Susanna Dean" %]
     \end{lstlisting} 
 \end{frame}
 
-\subsection{Syntax}
-
-\begin{frame}{Noch ein Beispiel}
-    % [% WRAPPER %]
+\begin{frame}[fragile]{Hallo Header \& Footer!}
+    \begin{block}{Header}
+        \begin{lstlisting}[
+            language=HTML,
+            basicstyle=\ttfamily\normalsize\mdseries,
+        ]
+<html>
+<head>
+  <title>[% title %]</title>
+</head>
+<body>
+  <h1>[% title %]</h1>
+        \end{lstlisting}
+    \end{block}
+    \pause
+    \begin{block}{Footer}
+        \begin{lstlisting}[
+            language=HTML,
+            basicstyle=\ttfamily\normalsize\mdseries,
+        ]
+  <p>&copy; [% copyright %]</p>
+</body>
+</html>
+        \end{lstlisting}
+    \end{block}
 \end{frame}
 
-\begin{frame}{Schleifen}
-    \emph{aus about.html}
+\begin{frame}[fragile]{Hallo Welt!}
+    \begin{lstlisting}[
+        language=HTML,
+        basicstyle=\ttfamily\normalsize\mdseries,
+    ]
+<html>
+<head>
+  <title>Ein erstes Beispiel</title>
+</head>
+<body>
+  <h1>Ein erstes Beispiel</h1>
+  <p>
+    Hallo Welt!
+  </p>
+  <p>&copy; 2010 Susanna Dean</p>
+</body>
+</html>
+    \end{lstlisting}
+\end{frame}
+
+\subsection{Komplexere Daten- und Kontrollstrukturen}
+
+\begin{frame}[fragile]{Schleifen und Bedingungen}
+    \begin{lstlisting}[
+        language=HTML,
+        basicstyle=\ttfamily\footnotesize\mdseries,
+    ]
+[% FOREACH artikel IN korb %]
+[% IF loop.first %]
+<table>
+  <tr>
+    <th>Pos.</th>
+    <th>Artikel</th>
+    <th>Preis</th>
+  </tr>
+[% END %]
+  <tr>
+    <td>[% loop.count %]</td>
+    <td>[% artikel.name %]</td>
+    <td>[% artikel.preis %]</td>
+  </tr]
+[% IF loop.last %]
+</table>
+[% END %]
+[% END %]
+    \end{lstlisting}
 \end{frame}
 
 \section{Anwendungsbeispiele}
