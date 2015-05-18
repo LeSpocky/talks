@@ -1,0 +1,151 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% documentclass and packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{atbegshi}           % workaround for newer PGF versions
+%\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+\documentclass{beamer}
+% https://sourceforge.net/tracker/index.php?func=detail&aid=1848912&group_id=92412&atid=600660
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage[ngerman]{babel}
+\usepackage[babel,english=american,german=guillemets]{csquotes}	% french
+\usepackage{microtype}
+
+% colors for listings
+\definecolor{lightergray}{gray}{.95}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkerblue}{rgb}{0,0,0.4}
+\definecolor{darkergreen}{rgb}{0,0.4,0}
+\definecolor{darkerred}{rgb}{0.4,0,0}
+
+%\usepackage{listings}
+%\lstloadlanguages{HTML,XML}
+%\lstset{
+%    basicstyle=\ttfamily\small\mdseries,
+%    keywordstyle=\bfseries\color{darkblue},
+%    identifierstyle=,
+%    commentstyle=\color{darkgray},
+%    stringstyle=\itshape\color{darkred},
+%    frame=none,
+%    showstringspaces=false,
+%    tabsize=4,
+%    backgroundcolor=\color{lightergray},
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% preparations for beamer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useinnertheme{default}
+\useoutertheme{infolines}
+%\usecolortheme[rgb={0.28,0.37,0.52}]{structure}
+\usecolortheme[rgb={0.18,0.23,0.33}]{structure}
+%\usecolortheme{beaver}
+\usefonttheme{structurebold}
+
+%%% Ränder vergrößern für's Café Central
+\setbeamersize{text margin left=1.2cm}
+\setbeamersize{text margin right=1.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% images
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\pgfdeclareimage[width=\textwidth]{lespockydeimpressum}{lespocky.de_impressum}
+%\pgfdeclareimage[width=0.6\textwidth]{psituxsmileybeispiel}{psi_tux_smiley_beispiel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% title, author, date
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[FSFE]{FSFE -- Free Software Foundation Europe}
+\subtitle{Free Software, Free Society!}
+\author{Alexander Dahl}
+\institute[lespocky.de]{\url{http://www.lespocky.de/}}
+\date{2015-05-18}
+\subject{subj}
+\keywords{foo, bar}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+%\begin{frame}{Überblick}
+%    \tableofcontents
+%\end{frame}
+
+%\section{Lightning Talk}
+
+\begin{frame}{Über die FSFE}
+    \begin{itemize}
+        \item gemeinnützige Organisation
+        \pause
+        \item freie Software
+        \pause
+        \item Europa
+    \end{itemize}
+\end{frame}
+
+%\subsection{Eignung}
+
+\begin{frame}{Arbeit der FSFE}
+    \begin{itemize}
+        \item Strategie
+        \item Rechtsfragen
+        \item Öffentlichkeitsarbeit
+        \item Offene Standards
+        \item Öffentliche Beschaffung und Auftragsvergabe
+        \item Softwarepatente in Europa
+        \item Europäische Union
+        \item Bildung
+        \item \dots
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Kampagnen}
+    \begin{itemize}
+        \item \enquote{Secure Boot}
+        \item pdfreaders.org
+        \item Document Freedom Day
+        \item Frage Deinen Kandidaten
+        \item Ich <3 Freie Software
+        \item Free Your Android!
+        \item \dots
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mitmachen}
+    \begin{itemize}
+        \item Informieren
+        \item Diskutieren
+        \item Fördern
+        \item Treffen
+        \item Praktikum
+        \item \dots
+    \end{itemize}
+\end{frame}
+
+\section*{Solang die dicke Frau noch singt \dots}
+
+\begin{frame}{Kontakt}
+    \begin{itemize}
+        \item \url{http://www.lespocky.de/}
+        \item \url{http://blog.antiblau.de/}
+        \item \emph{alex@antiblau.de}
+    \end{itemize}
+
+    \vspace{1em}
+    \small
+    Die Folien sind freigegeben unter \emph{Creative Commons
+    Namensnennung-Nicht kommerziell-Weitergabe unter gleichen
+    Bedingungen 3.0 Deutschland Lizenz} (BY-NC-SA).
+    \normalsize
+\end{frame}
+
+\end{document}
