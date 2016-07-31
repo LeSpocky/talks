@@ -1,0 +1,145 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% documentclass and packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{atbegshi}           % workaround for newer PGF versions
+%\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+\documentclass{beamer}
+% https://sourceforge.net/tracker/index.php?func=detail&aid=1848912&group_id=92412&atid=600660
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage[ngerman]{babel}
+\usepackage[babel,english=american,german=guillemets]{csquotes}	% french
+\usepackage{microtype}
+
+% colors for listings
+\definecolor{lightergray}{gray}{.95}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkerblue}{rgb}{0,0,0.4}
+\definecolor{darkergreen}{rgb}{0,0.4,0}
+\definecolor{darkerred}{rgb}{0.4,0,0}
+
+%\usepackage{listings}
+%\lstloadlanguages{HTML,XML}
+%\lstset{
+%    basicstyle=\ttfamily\small\mdseries,
+%    keywordstyle=\bfseries\color{darkblue},
+%    identifierstyle=,
+%    commentstyle=\color{darkgray},
+%    stringstyle=\itshape\color{darkred},
+%    frame=none,
+%    showstringspaces=false,
+%    tabsize=4,
+%    backgroundcolor=\color{lightergray},
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% preparations for beamer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useinnertheme{default}
+\useoutertheme{infolines}
+%\usecolortheme[rgb={0.28,0.37,0.52}]{structure}
+\usecolortheme[rgb={0.18,0.23,0.33}]{structure}
+%\usecolortheme{beaver}
+\usefonttheme{structurebold}
+
+%%% Ränder vergrößern für's Café Central
+\setbeamersize{text margin left=1.2cm}
+\setbeamersize{text margin right=1.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% images
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\pgfdeclareimage[width=\textwidth]{lespockydeimpressum}{lespocky.de_impressum}
+%\pgfdeclareimage[width=0.6\textwidth]{psituxsmileybeispiel}{psi_tux_smiley_beispiel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% title, author, date
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[Contrib To FLOSS]{Contribute to Free/Libre and OpenSource Software}
+\subtitle{HowTo Get Your Things Upstream}
+\author{Alexander Dahl}
+\institute[lespocky.de]{\url{http://www.lespocky.de/}}
+\date{2016-09-26}
+\subject{subj}
+\keywords{FLOSS, HowTo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+%\begin{frame}{Überblick}
+%    \tableofcontents
+%\end{frame}
+
+\section{What?}
+
+\begin{frame}{Free/Libre and OpenSource Software}
+    \begin{itemize}
+        \item FSF definition?
+    \end{itemize}
+\end{frame}
+
+\section{Why?}
+
+\begin{frame}{Why contribute?}
+    \begin{itemize}
+        \item Fun
+        \item Give back
+        \item Business
+        \item \dots
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Why upstreaming?}
+    \begin{itemize}
+        \item more people can use it
+        \item review and improvement of your stuff
+        \item less future work
+        \item \dots
+    \end{itemize}
+\end{frame}
+
+\section{How?}
+
+\begin{frame}{It depends \dots}
+    \begin{itemize}
+        \item what type of contribution
+        \item which project/community
+        \item your preference
+        \item \dots
+    \end{itemize}
+\end{frame}
+
+\subsection{Communicate}
+
+\subsection{Git}
+
+\section*{And the beat goes on \dots}
+
+\begin{frame}{Contact}
+    \begin{itemize}
+        \item @LeSpocky
+        \item \url{http://www.lespocky.de/}
+        \item \url{http://blog.antiblau.de/}
+        \item \emph{post@lespocky.de}
+    \end{itemize}
+
+    \vspace{1em}
+    \small
+    These slides are licensed under the \emph{Creative Commons
+    Attribution-ShareAlike 4.0 International License. (BY-SA)} \\
+    To view a copy of this license, visit
+    \url{http://creativecommons.org/licenses/by-sa/4.0/}.
+    \normalsize
+\end{frame}
+
+\end{document}
