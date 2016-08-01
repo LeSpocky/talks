@@ -12,6 +12,7 @@
 \usepackage[ngerman]{babel}
 \usepackage[babel,english=american,german=guillemets]{csquotes}	% french
 \usepackage{microtype}
+\usepackage{ulem}
 
 % colors for listings
 \definecolor{lightergray}{gray}{.95}
@@ -83,9 +84,35 @@
 \section{What?}
 
 \begin{frame}{Free/Libre and OpenSource Software}
-    \begin{itemize}
-        \item FSF definition?
-    \end{itemize}
+    \only<1>
+    {
+        \begin{itemize}
+            \item Free beer!!1!
+            \item<2-> Free speech!
+        \end{itemize}
+    }
+
+    \only<2->
+    {
+        \begin{itemize}
+            \item \sout{Free beer!!1!}
+            \item Free speech!
+        \end{itemize}
+    }
+
+    \uncover<3->
+    {
+        \begin{description}
+            \item[Freedom 0] The freedom to run the program for any purpose.
+            \item[Freedom 1] The freedom to study how the program works, and
+                change it to make it do what you wish.
+            \item[Freedom 2] The freedom to redistribute and make copies so
+                you can help your neighbor.
+            \item[Freedom 3] The freedom to improve the program, and release
+                your improvements (and modified versions in general) to the
+                public, so that the whole community benefits.
+        \end{description}
+    }
 \end{frame}
 
 \section{Why?}
