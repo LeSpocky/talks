@@ -9,5 +9,6 @@ syntax: glob
 **.snm
 **.toc
 **.vrb
+**.dvi
 
 **tmp.diff
