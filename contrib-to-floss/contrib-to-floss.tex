@@ -81,6 +81,7 @@
     \tableofcontents
 \end{frame}
 
+
 \section*{Who?}
 
 \begin{frame}
@@ -109,7 +110,10 @@
     \end{block}
 \end{frame}
 
+
 \section{What?}
+
+\frame{\tableofcontents[currentsection]}
 
 \begin{frame}{Free/Libre and OpenSource Software}
     \begin{block}{What Do We Want?}
@@ -159,7 +163,10 @@
     \end{itemize}
 \end{frame}
 
+
 \section{Why?}
+
+\frame{\tableofcontents[currentsection]}
 
 \begin{frame}{Why Contribute?}
     \begin{itemize}
@@ -186,7 +193,10 @@
     \end{itemize}
 \end{frame}
 
+
 \section{How?}
+
+\frame{\tableofcontents[currentsection]}
 
 \begin{frame}{It Depends \dots}
     \begin{itemize}
@@ -206,30 +216,53 @@
 \subsection{Communicate}
 
 \begin{frame}{Ask and Answer Questions}
+    \framesubtitle{The Community Part}
     \begin{itemize}
         \item mailing list
         \item forum
         \item chat
         \item stackoverflow
         \item social media
+        \item usenet
         \item \dots
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Use the Bugtracker}
-    \begin{itemize}
-        \item (welche gibt es und wie verhalt ich mich da?)
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{(It's a trap)}
+\begin{frame}{Talk, Talk, Talk}
+    \framesubtitle{It's a trap \dots}
     \begin{itemize}
         \item make yourself familiar with community rules
+            \begin{itemize}
+                \item Code of Conduct
+                \item non written rules
+            \end{itemize}
         \item choose the right channel
         \item be polite
         \item be patient
         \item learn.to/quote
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Use the Bugtracker}
+    \begin{block}{Which}
+        \begin{itemize}
+            \item Bugzilla (run far, run fast)
+            \item Trac
+            \item Mantis (maybe run)
+            \item Redmine
+            \item GitHub
+            \item Atlassian Jira (you could run while it still loads)
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{How}
+        \begin{itemize}
+            \item make sure it's a bug (not a layer 8 problem)
+            \item detailed description
+            \item reproducible (minimal example)
+            \item (add a patch)
+        \end{itemize}
+    \end{block}
 \end{frame}
 
 \subsection{Git}
