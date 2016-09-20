@@ -55,7 +55,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% images
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\pgfdeclareimage[width=\textwidth]{lespockydeimpressum}{lespocky.de_impressum}
+\pgfdeclareimage[width=\textwidth]{jsonc1}{json-c_volunteer_1.png}
+\pgfdeclareimage[width=\textwidth]{jsonc2}{json-c_volunteer_2.png}
+\pgfdeclareimage[width=\textwidth]{jsonc3}{json-c_volunteer_3.png}
 %\pgfdeclareimage[width=0.6\textwidth]{psituxsmileybeispiel}{psi_tux_smiley_beispiel}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -200,7 +202,7 @@
 \frame{\tableofcontents[currentsection]}
 
 \begin{frame}{I Want to Help!}
-    \missingfigure{This json-c mailing list posting \dots}
+    \pgfuseimage{jsonc1}
 \end{frame}
 
 \begin{frame}{It Depends \dots}
@@ -308,9 +310,8 @@
 \section*{What else?}
 
 \begin{frame}{What Happened Next on the JSON-C Mailing List?}
-    \missingfigure{This 2nd json-c mailing list posting \dots}
-    \pause
-    \missingfigure{This 3rd json-c mailing list posting \dots}
+    \pgfuseimage<1>{jsonc2}
+    \pgfuseimage<2>{jsonc3}
 \end{frame}
 
 \begin{frame}{The Last Slide}
