@@ -14,6 +14,7 @@
 \usepackage[babel,english=american,german=guillemets]{csquotes}	% french
 \usepackage{microtype}
 \usepackage{todonotes}
+\presetkeys{todonotes}{inline}{}
 \usepackage{ulem}
 
 % colors for listings
@@ -241,7 +242,7 @@
 \subsection{Communicate}
 
 \begin{frame}{Ask and Answer Questions}
-    \framesubtitle{The Community Part}
+    \framesubtitle{The community part}
     \begin{itemize}
         \item mailing list
         \item forum
@@ -269,6 +270,7 @@
 \end{frame}
 
 \begin{frame}{Use the Bugtracker}
+%     \framesubtitle{Or maybe not for different reasons \dots}
     \begin{block}{Which}
         \begin{itemize}
             \item Bugzilla (run far, run fast)
@@ -282,7 +284,7 @@
     \pause
     \begin{block}{How}
         \begin{itemize}
-            \item make sure it's a bug (not a layer 8 problem)
+            \item make sure it's a bug (not a \enquote{layer 8 problem})
             \item detailed description
             \item reproducible (minimal example)
             \item (add a patch)
@@ -319,11 +321,52 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{It's Distributed!}
+    \missingfigure{add graphic illustrating upstream repo, your github
+            repo, your local repo, the index, the working directory …}
+\end{frame}
+
+\begin{frame}{Send Patches}
+    \framesubtitle{Yes, to mailing lists \dots}
+    \begin{block}{Do Send}
+        \begin{itemize}
+            \item clone upstream repository
+            \item create a local branch
+            \item work, work \dots
+            \item \texttt{git format-patch}
+            \item \texttt{git send-email}
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Let Pull}
+        \begin{itemize}
+            \item host your own git server
+            \item synchronize with upstream \strong{and} your git server \\
+                    (\texttt{git help remote})
+            \item write a mail saying someone should pull from your server
+        \end{itemize}
+    \end{block}
+\end{frame}
+
 \begin{frame}{Pull Requests}
+    \framesubtitle{Get some changes from my tree!}
     \begin{itemize}
-        \item \enquote{Get some changes from my tree.}
+        \item \texttt{git request-pull}
+        \pause
+        \item \enquote{I made some changes and pushed it to my public
+                repository. Would you mind pulling from there to review
+                what I did and maybe integrate it upstream?}
+        \pause
+        \item upstream maintainer should review patch (series)
+        \item tools like \href{https://patchwork.ozlabs.org/}{patchworks}
+                help maintainer
         \item \url{http://www.marmalade.de/magazin/2014/12/pullrequests-fluch-und-segen/}
     \end{itemize}
+\end{frame}
+
+\begin{frame}{GitHub}
+    \framesubtitle{Looks easier at first sight \dots}
+    \todo{describe github workflow}
 \end{frame}
 
 \begin{frame}{Contribute Without Git}
