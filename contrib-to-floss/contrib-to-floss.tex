@@ -13,6 +13,7 @@
 \usepackage[ngerman]{babel}
 \usepackage[babel,english=american,german=guillemets]{csquotes}	% french
 \usepackage{microtype}
+\usepackage{tikz}
 \usepackage{todonotes}
 \presetkeys{todonotes}{inline}{}
 \usepackage{ulem}
@@ -29,15 +30,15 @@
 \usepackage{listings}
 % \lstloadlanguages{HTML,XML}
 \lstset{
-   basicstyle=\ttfamily\small\mdseries,
-   keywordstyle=\bfseries\color{darkblue},
-   identifierstyle=,
-   commentstyle=\color{darkgray},
-   stringstyle=\itshape\color{darkred},
-   frame=none,
-   showstringspaces=false,
-   tabsize=4,
-   backgroundcolor=\color{lightergray},
+    basicstyle=\ttfamily\small\mdseries,
+    keywordstyle=\bfseries\color{darkblue},
+    identifierstyle=,
+    commentstyle=\color{darkgray},
+    stringstyle=\itshape\color{darkred},
+    frame=none,
+    showstringspaces=false,
+    tabsize=4,
+    backgroundcolor=\color{lightergray},
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -297,7 +298,7 @@
 \subsection{Git}
 
 \begin{frame}[fragile]{What's a Patch?}
-    \begin{lstlisting}[
+    \begin{lstlisting}[%
         basicstyle=\ttfamily\tiny\mdseries
     ]
 From: Alexander Dahl <alex@netz39.de>
@@ -359,9 +360,8 @@ index 73ab5ef..adc119c 100644
     \end{itemize}
 \end{frame}
 
-\begin{frame}{It's Distributed!}
-    \missingfigure{add graphic illustrating upstream repo, your github
-            repo, your local repo, the index, the working directory …}
+\begin{frame}[fragile]{It's Distributed!}
+    \input{git_distributed.tikz}
 \end{frame}
 
 \begin{frame}{Send Patches}
