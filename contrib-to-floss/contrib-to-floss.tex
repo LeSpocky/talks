@@ -352,17 +352,39 @@ index 73ab5ef..adc119c 100644
 \end{frame}
 
 \begin{frame}{Learn Git}
-    \begin{itemize}
-        \item Books
-        \item Tutorials
-        \item Workshops
-        \item \strong{Use it!}
-        \item see \url{https://git-scm.com/doc}
-    \end{itemize}
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item Books
+                \item Tutorials
+                \item Workshops
+                \item \strong{Use it!}
+                \item see \url{https://git-scm.com/doc}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \input{git-icon.tikz}
+        \end{column}
+    \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{It's Distributed!}
-    \input{git_distributed.tikz}
+\begin{frame}{It's Distributed!}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \input{git_simple.tikz}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item add
+                \item branch
+                \item checkout
+                \item commit
+                \item diff
+                \item log
+                \item status
+            \end{itemize}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Send Patches}
@@ -410,7 +432,17 @@ index 73ab5ef..adc119c 100644
 
 \begin{frame}{GitHub}
     \framesubtitle{Looks easier at first sight \dots}
-    \todo{describe github workflow}
+    \input{git_distributed.tikz}
+\end{frame}
+
+\begin{frame}{Patch Improvement}
+    \begin{block}{Better Patches}
+        \todo{hints for actually better patches}
+    \end{block}
+    \pause
+    \begin{block}{Patch v2}
+        \todo{what happens after my PR}
+    \end{block}
 \end{frame}
 
 \begin{frame}{Contribute Without Git}
@@ -434,6 +466,14 @@ index 73ab5ef..adc119c 100644
 \begin{frame}{What Happened Next on the JSON-C Mailing List?}
     \pgfuseimage<1>{jsonc2}
     \pgfuseimage<2>{jsonc3}
+\end{frame}
+
+\begin{frame}{License Stuff}
+    \begin{block}{The Git Logo}
+        Git Logo by \href{http://twitter.com/jasonlong}{Jason Long} is
+        licensed under the
+        \href{http://creativecommons.org/licenses/by/3.0/}{Creative Commons Attribution 3.0 Unported License}.
+    \end{block}
 \end{frame}
 
 \begin{frame}{The Last Slide}

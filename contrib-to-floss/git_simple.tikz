@@ -1,0 +1,12 @@
+\begin{tikzpicture}[%
+    repo/.style={circle,draw=blue!50,fill=blue!20,very thick,
+            minimum size=2cm},
+    very thick,>=stealth
+]
+    \node (upstream) at (0,0) [repo] {upstream};
+    \node (clone) at (2,-4) [repo,draw=violet!50,fill=violet!20] {local clone};
+
+    \draw [->] (upstream) to [bend right=30] node [auto,swap] {pull} (clone);
+\end{tikzpicture}
+
+% vim:syntax=tex
