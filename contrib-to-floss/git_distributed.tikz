@@ -1,5 +1,9 @@
-\begin{tikzpicture}
-    \draw (0,0) -- (1,1);
+\begin{tikzpicture}[%
+    repo/.style={circle,draw=blue!50,fill=blue!20,thick,
+            minimum size=2.5cm},
+]
+    \node (upstream) at (0,1) [repo] {upstream};
+    \node (fork) at (5,0) [repo] {fork};
 \end{tikzpicture}
 
-% vim:syntax=text
+% vim:syntax=tex
