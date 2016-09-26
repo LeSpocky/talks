@@ -223,8 +223,24 @@
 
 \frame{\tableofcontents[currentsection]}
 
-\begin{frame}{I Want to Help!}
-    \pgfuseimage{jsonc1}
+\begin{frame}[fragile]{I Want to Help!}
+    \only<1> {
+        \pgfuseimage{jsonc1}
+    }
+    \only<2> {
+        \todo{put here the quoted mail from the next frame}
+    }
+\end{frame}
+    \begin{frame}[fragile]{foo}
+        \begin{verbatim}
+> Note that at some point in the (hopefully) near
+> future, I expect to create an arguably more
+> useful 0.13 release off of the master branch.
+> Volunteers are always welcome to help.
+
+I'm volunteer for improving a lot json-c. I have
+full ideas and good knowledge.
+        \end{verbatim}
 \end{frame}
 
 \begin{frame}{It Depends \dots}
