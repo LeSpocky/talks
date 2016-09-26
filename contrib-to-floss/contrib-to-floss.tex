@@ -98,7 +98,7 @@
 \begin{document}
 
 \begin{frame}
-	\titlepage
+    \titlepage
 \end{frame}
 
 \begin{frame}
@@ -343,7 +343,8 @@ index 73ab5ef..adc119c 100644
     \pause
     This fixed sysupgrade for OpenWRT Xen VM. Merged both in gluon
     (Freifunk) and upstream.
-    See \href{https://github.com/freifunk-gluon/gluon/pull/692}{PR-692} on GitHub.
+    See \href{https://github.com/freifunk-gluon/gluon/pull/692}{PR-692}
+    on GitHub.
 \end{frame}
 
 \begin{frame}{Why Git?}
@@ -365,27 +366,33 @@ index 73ab5ef..adc119c 100644
 
 \begin{frame}{Learn Git}
     \begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+            \input{git-icon.tikz}
+        \end{column}
         \begin{column}{0.6\textwidth}
             \begin{itemize}
                 \item Books
+                    \begin{itemize}
+                        \item e.\,g. \href{https://git-scm.com/book}{Pro Git}
+                    \end{itemize}
                 \item Tutorials
                 \item Workshops
-                \item \strong{Use it!}
                 \item see \url{https://git-scm.com/doc}
             \end{itemize}
-        \end{column}
-        \begin{column}{0.4\textwidth}
-            \input{git-icon.tikz}
+            \pause
+            \begin{itemize}
+                \item \large\strong{Use it!}\normalsize
+            \end{itemize}
         \end{column}
     \end{columns}
 \end{frame}
 
 \begin{frame}{It's Distributed!}
     \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
+        \begin{column}{0.4\textwidth}
             \input{git_simple.tikz}
         \end{column}
-        \begin{column}{0.5\textwidth}
+        \begin{column}{0.6\textwidth}
             \begin{itemize}
                 \item add
                 \item branch
@@ -442,18 +449,53 @@ index 73ab5ef..adc119c 100644
     \end{itemize}
 \end{frame}
 
-\begin{frame}{GitHub}
+\begin{frame}{GitHub\textregistered}
+    \begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+            \input{github-mark.tikz}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item Git repository hosting
+                \item issue tracker
+                \item wiki
+                \item easy fork, branch, pull request, merge \dots
+                \item social net (follower)
+                \item statistics
+                \item service integration
+                \item website hosting
+                \item (enterprise services)
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{GitHub Workflow}
     \framesubtitle{Looks easier at first sight \dots}
     \input{git_distributed.tikz}
 \end{frame}
 
 \begin{frame}{Patch Improvement}
     \begin{block}{Better Patches}
-        \todo{hints for actually better patches}
+        \begin{itemize}
+            \item change one thing at a time
+            \item write a good commit message
+            \begin{itemize}
+                \item short first line
+                \item one empty line
+                \item describe the reason for the change
+                \item reference ticket numbers
+            \end{itemize}
+        \end{itemize}
     \end{block}
     \pause
     \begin{block}{Patch v2}
-        \todo{what happens after my PR}
+        \begin{itemize}
+            \item \small\texttt{git format-patch -v4 -M -s -o outgoing origin/master}\normalsize
+            \item what can \texttt{git rebase} do for you?
+            \item see \href{https://buildroot.uclibc.org/downloads/manual/manual.html\#submitting-patches}{buildroot manual}
+                    on submitting patches
+        \end{itemize}
     \end{block}
 \end{frame}
 
@@ -480,11 +522,20 @@ index 73ab5ef..adc119c 100644
     \pgfuseimage<2>{jsonc3}
 \end{frame}
 
-\begin{frame}{License Stuff}
+\begin{frame}{Legal Stuff}
     \begin{block}{The Git Logo}
         Git Logo by \href{http://twitter.com/jasonlong}{Jason Long} is
         licensed under the
         \href{http://creativecommons.org/licenses/by/3.0/}{Creative Commons Attribution 3.0 Unported License}.
+    \end{block}
+    \begin{block}{The GitHub Logo}
+        GITHUB®, the GITHUB® logo design, OCTOCAT® and the OCTOCAT® logo
+        design are exclusive trademarks registered in the United States
+        by GitHub, Inc.
+
+        The OCTOCAT design is the exclusive property of GitHub, Inc and
+        has been federally registered with the United States Copyright
+        Office. All rights reserved.
     \end{block}
 \end{frame}
 

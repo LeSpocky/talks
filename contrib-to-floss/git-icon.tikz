@@ -34,4 +34,4 @@
     \end{scope}
 \end{tikzpicture}
 
-% vim:syntax=tex
+% vim:ft=tex
