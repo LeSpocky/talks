@@ -178,14 +178,21 @@
 \end{frame}
 
 \begin{frame}{Components of FLOSS}
-    \begin{itemize}
-        \item Sourcecode
-        \item Documentation
-        \item Artwork
-        \item Community
-        \item Tests
-        \item Infrastructure
-    \end{itemize}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item Sourcecode
+                \item Documentation
+                \item Artwork
+                \item Community
+                \item Tests
+                \item Infrastructure
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \input{../img/tux.tikz}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 
@@ -540,6 +547,13 @@ doc changes.
 \end{frame}
 
 \begin{frame}{Legal Stuff}
+    \begin{block}{The Linux Mascot}
+        Penguin Tux by \href{mailto:lewing@isc.tamu.edu}{Larry Ewing}
+        and \href{http://isc.tamu.edu/~lewing/linux/}{The GIMP},
+        vectorized by \href{http://www.home.unix-ag.org/simon/}{Simon Budig},
+        converted to TikZ by
+        \href{http://www.texample.net/weblog/2012/apr/28/tux-tex-tikz/}{Stefan Kottwitz}.
+    \end{block}
     \begin{block}{The Git Logo}
         Git Logo by \href{http://twitter.com/jasonlong}{Jason Long} is
         licensed under the
