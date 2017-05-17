@@ -1,0 +1,137 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% documentclass and packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\RequirePackage{atbegshi}           % workaround for newer PGF versions
+\documentclass{beamer}
+% https://sourceforge.net/tracker/index.php?func=detail&aid=1848912&group_id=92412&atid=600660
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage[ngerman]{babel}
+
+\usepackage[babel,english=american,german=guillemets]{csquotes}	% french
+\usepackage{microtype}
+
+% colors for listings
+\definecolor{lightergray}{gray}{.95}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkerblue}{rgb}{0,0,0.4}
+\definecolor{darkergreen}{rgb}{0,0.4,0}
+\definecolor{darkerred}{rgb}{0.4,0,0}
+
+%\usepackage{listings}
+%\lstloadlanguages{HTML,XML}
+%\lstset{
+%    basicstyle=\ttfamily\small\mdseries,
+%    keywordstyle=\bfseries\color{darkblue},
+%    identifierstyle=,
+%    commentstyle=\color{darkgray},
+%    stringstyle=\itshape\color{darkred},
+%    frame=none,
+%    showstringspaces=false,
+%    tabsize=4,
+%    backgroundcolor=\color{lightergray},
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newcommand{\strong}[1]{\@strong{#1}}
+\newcommand{\@@strong}[1]{\textbf{\let\@strong\@@@strong#1}}
+\newcommand{\@@@strong}[1]{\textnormal{\let\@strong\@@strong#1}}
+\let\@strong\@@strong
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% preparations for beamer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useinnertheme{default}
+\useoutertheme{infolines}
+%\usecolortheme[rgb={0.28,0.37,0.52}]{structure}
+\usecolortheme[rgb={0.18,0.23,0.33}]{structure}
+%\usecolortheme{beaver}
+\usefonttheme{structurebold}
+
+%%% Ränder vergrößern, sieht dann nicht so an den Rand gequetscht aus
+\setbeamersize{text margin left=0.5cm}
+\setbeamersize{text margin right=0.5cm}
+
+%%% let hyperlinks look like hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=darkblue
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% images
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\pgfdeclareimage[width=\textwidth]{officecalc1}{screenshot_libreoffice_calc_1.png}
+%\pgfdeclareimage[width=\textwidth]{firefox1}{screenshot_firefox_1.png}
+%\pgfdeclareimage[width=\textwidth]{inkscape1}{screenshot_inkscape_1.png}
+%\pgfdeclareimage[height=0.8\paperheight]{vlc1}{screenshot_vlc_1.png}
+%\pgfdeclareimage[height=0.7\paperheight]{gimp1}{screenshot_gimp_1.png}
+%\pgfdeclareimage[width=\textwidth]{okular1}{screenshot_okular_1.png}
+%\pgfdeclareimage[width=\textwidth]{thunderbird1}{screenshot_thunderbird_1.png}
+
+%\titlegraphic{%
+%    \input{../logo/netz39-figonly-title.tikz}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% title, author, date
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Still Using E-Mail}
+\subtitle{Why a >30 year old technology is the most efficient way to develop the Linux kernel}
+\author{Alexander Dahl}
+\institute[lespocky.de]{\url{http://www.lespocky.de/}}
+\date{2017-05-22}
+\subject{subj}
+\keywords{Linux, E-Mail}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+%\logo{
+%    \input{../logo/netz39-figonly-corner.tikz}
+%}
+
+\section{E-Mail}
+
+
+\section{Kontakt}
+
+\begin{frame}{Kontakt}
+    \begin{block}{Alexander Dahl aka LeSpocky}
+        \begin{description}[Twitter]
+            \item [E-Mail] \href{mailto:alex@netz39.de}{alex@netz39.de}
+            \item [WWW] \href{http://www.lespocky.de/}{lespocky.de} or
+                    \href{http://blog.antiblau.de/}{blog.antiblau.de}
+            \item [Twitter] \href{https://twitter.com/LeSpocky}{@LeSpocky}
+            \item [XMPP] alex@jabber.n39.eu
+        \end{description}
+    \end{block}
+    \begin{block}{Folien}
+        \begin{itemize}
+            \item \texttt{hg clone https://bitbucket.org/lespocky/talks}
+        \end{itemize}
+    \end{block}
+    \begin{block}{Lizenz}
+        Diese Folien sind lizenziert unter einer
+        \href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons \\
+        Namensnennung -- Weitergabe unter gleichen Bedingungen 4.0
+        International Lizenz} (CC BY-SA 4.0).
+    \end{block}
+\end{frame}
+
+\end{document}
