@@ -8,10 +8,11 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
-\usepackage[ngerman]{babel}
+\usepackage[english]{babel}
 
 \usepackage[babel,english=american,german=guillemets]{csquotes}	% french
 \usepackage{microtype}
+\usepackage{tikz}
 
 % colors for listings
 \definecolor{lightergray}{gray}{.95}
@@ -106,13 +107,76 @@
 %    \input{../logo/netz39-figonly-corner.tikz}
 %}
 
-\section{E-Mail}
+\section{Linux}
 
+\begin{frame}{Linux}
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item lots of changes (7--8 changes an hour / 24 hours a day)
+                \item Git
+                \item E-Mail
+                \item (patchwork)
+                \item open mailing lists
+                \item open history
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \input{../img/tux.tikz}
+        \end{column}
+    \end{columns}
+\end{frame}
 
-\section{Kontakt}
+\begin{frame}{Alternatives Suck}
+    \begin{itemize}
+        \item Github, bitbucket, gitlab, …
+        \item Gerrit
+        \item …
+    \end{itemize}
+\end{frame}
 
-\begin{frame}{Kontakt}
-    \begin{block}{Alexander Dahl aka LeSpocky}
+\begin{frame}{E-Mail}
+    \begin{exampleblock}{Pro}
+        \begin{itemize}
+            \item everyone has it
+            \item no online access required
+            \item internationalization and accessibility
+            \item fast patch review
+            \item free choice between numerous clients
+            \item local testing easy
+            \item everyone can review
+            \item trains others on your team
+        \end{itemize}
+    \end{exampleblock}
+    \pause
+    \begin{alertblock}{Con}
+        \begin{itemize}
+            \item project managers don't understand it
+            \item people use crappy MUAs
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+\section{Legal}
+
+\begin{frame}{Where I Got Stuff}
+    \begin{block}{Idea stolen from …}
+        Based on the talk \enquote{Patches carved into stone tablets} by
+        Greg Kroah Hartman. See
+        \url{https://kernel-recipes.org/en/2016/talks/patches-carved-into-stone-tablets/}
+        for video, original slides, etc.
+    \end{block}
+    \begin{block}{The Linux Mascot}
+        Penguin Tux by \href{mailto:lewing@isc.tamu.edu}{Larry Ewing}
+        and \href{http://isc.tamu.edu/~lewing/linux/}{The GIMP},
+        vectorized by \href{http://www.home.unix-ag.org/simon/}{Simon Budig},
+        converted to TikZ by
+        \href{http://www.texample.net/weblog/2012/apr/28/tux-tex-tikz/}{Stefan Kottwitz}.
+    \end{block}
+\end{frame}
+
+\begin{frame}{The Last Slide}
+    \begin{block}{Contact Me}
         \begin{description}[Twitter]
             \item [E-Mail] \href{mailto:post@lespocky.de}{post@lespocky.de}
                     or \href{mailto:alex@netz39.de}{alex@netz39.de}
@@ -122,16 +186,16 @@
             \item [XMPP] alex@jabber.n39.eu
         \end{description}
     \end{block}
-    \begin{block}{Folien}
+    \begin{block}{Slides}
         \begin{itemize}
             \item \texttt{hg clone https://bitbucket.org/lespocky/talks}
         \end{itemize}
     \end{block}
-    \begin{block}{Lizenz}
-        Diese Folien sind lizenziert unter einer
-        \href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons \\
-        Namensnennung -- Weitergabe unter gleichen Bedingungen 4.0
-        International Lizenz} (CC BY-SA 4.0).
+    \begin{block}{License}
+        These slides are licensed under the Creative Commons
+        Attribution-ShareAlike 4.0 International License. (CC BY-SA 4.0) \\
+        To view a copy of this license, visit
+        \url{http://creativecommons.org/licenses/by-sa/4.0/}.
     \end{block}
 \end{frame}
 
