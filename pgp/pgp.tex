@@ -1,0 +1,179 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% documentclass and packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{atbegshi}           % workaround for newer PGF versions
+%\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+\documentclass{beamer}
+% https://sourceforge.net/tracker/index.php?func=detail&aid=1848912&group_id=92412&atid=600660
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage[ngerman]{babel}
+\usepackage[babel,english=american,german=guillemets]{csquotes}	% french
+\usepackage{microtype}
+
+% colors for listings
+\definecolor{lightergray}{gray}{.95}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkerblue}{rgb}{0,0,0.4}
+\definecolor{darkergreen}{rgb}{0,0.4,0}
+\definecolor{darkerred}{rgb}{0.4,0,0}
+
+%\usepackage{listings}
+%\lstloadlanguages{HTML,XML}
+%\lstset{
+%    basicstyle=\ttfamily\small\mdseries,
+%    keywordstyle=\bfseries\color{darkblue},
+%    identifierstyle=,
+%    commentstyle=\color{darkgray},
+%    stringstyle=\itshape\color{darkred},
+%    frame=none,
+%    showstringspaces=false,
+%    tabsize=4,
+%    backgroundcolor=\color{lightergray},
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% preparations for beamer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useinnertheme{default}
+\useoutertheme{infolines}
+%\usecolortheme[rgb={0.28,0.37,0.52}]{structure}
+\usecolortheme[rgb={0.18,0.23,0.33}]{structure}
+%\usecolortheme{beaver}
+\usefonttheme{structurebold}
+
+%%% Ränder vergrößern, sieht dann nicht so an den Rand gequetscht aus
+\setbeamersize{text margin left=0.5cm}
+\setbeamersize{text margin right=0.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% images
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\pgfdeclareimage[width=\textwidth]{lespockydeimpressum}{lespocky.de_impressum}
+%\pgfdeclareimage[width=0.6\textwidth]{psituxsmileybeispiel}{psi_tux_smiley_beispiel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% title, author, date
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[PGP]{Einführung in PGP}
+\subtitle{Auch: Einführung in OpenPGP und GnuPG}
+\author{Alexander Dahl}
+\institute[lespocky.de]{\url{http://www.lespocky.de/}}
+\date{2017-09-25}
+%\subject{subj}
+\keywords{PGP, OpenPGP, GnuPG}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{PGP}
+    \begin{itemize}
+        \item Phil Zimmermann (1991)
+        \item Public-Key-Verfahren: asymmetrische Verschlüsselung
+        \item Öffentlicher Schlüssel zum Verschlüsseln und Signaturen prüfen
+        \item Privater, geheimer Schlüssel, mit Passwort geschützt
+            \begin{itemize}
+                \item Entschlüsseln
+                \item Signieren
+            \end{itemize}
+        \item Symmetrische Verschlüsselung der Daten
+        \item Asymmetrische Verschlüsselung der symmetrischen Schlüssel
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{OpenPGP und GnuPG}
+    \begin{itemize}
+        \item Standard OpenPGP von 1998 (RFC 4880)
+        \item GnuPG von Werner Koch (1997)
+        \item Portierung auf Microsoft Windows vom BMWA und BMI gefördert (2001/2002)
+        \item Standard bei Linux-Distributionen
+        \item Verschiedene Front-Ends verfügbar
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{E-Mail}
+    \begin{itemize}
+        \item Enigmail für Mozilla Thunderbird
+        \item Plugins für viele MUAs
+            \begin{itemize}
+                \item Claws Mail
+                \item Evolution
+                \item Microsoft Outlook
+                \item KMail
+                \item Mutt
+                \item Webmailer
+            \end{itemize}
+        \item \url{https://emailselfdefense.fsf.org/de/}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Web of Trust}
+    \begin{itemize}
+        \item Alice signiert den Schlüssel von Bob und vertraut Bobs Schlüsselsignaturen
+        \item Bob signiert den Schlüssel von Carl
+        \item Somit betrachtet Alice den Schlüssel von Carl als gültig
+    \end{itemize}
+    \pause
+    \begin{itemize}
+        \item Welche Schlüssel sind vertrauenswürdig?
+        \item Keysigning
+        \item \url{https://pgp.cs.uu.nl/paths/79be3e4300411886/to/34adcd0072215cc6.html}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Debian}
+    \begin{itemize}
+        \item Pakete
+        \item Metadaten
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Git}
+    \begin{itemize}
+        \item Commits
+        \item Tags
+        \item \url{https://mikegerwitz.com/papers/git-horror-story}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Weitere Anwendungen}
+    \begin{itemize}
+        \item Dateien verschlüsseln
+            \begin{itemize}
+                \item pass (Passwortmanager)
+            \end{itemize}
+        \item Chat
+            \begin{itemize}
+                \item XEP-0027, XEP-0373, XEP-0374 für XMPP (Jabber)
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\section*{Solang die dicke Frau noch singt \dots}
+
+\begin{frame}{Kontakt}
+    \begin{itemize}
+        \item \url{http://www.lespocky.de/}
+        \item \url{http://blog.antiblau.de/}
+        \item \emph{alex@antiblau.de}
+    \end{itemize}
+
+    \vspace{1em}
+    \small
+    Die Folien sind freigegeben unter \emph{Creative Commons
+    Namensnennung-Nicht kommerziell-Weitergabe unter gleichen
+    Bedingungen 3.0 Deutschland Lizenz} (BY-NC-SA).
+    \normalsize
+\end{frame}
+
+\end{document}
