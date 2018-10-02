@@ -5,7 +5,6 @@ syntax: glob
 **.log
 **.nav
 **.out
-**.pdf
 **.snm
 **.toc
 **.vrb
@@ -13,3 +12,7 @@ syntax: glob
 **.backup
 
 **tmp.diff
+
+syntax: regexp
+
+^([^/]+)/\1\.pdf$
