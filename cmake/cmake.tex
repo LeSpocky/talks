@@ -1,0 +1,177 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% documentclass and packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{atbegshi}           % workaround for newer PGF versions
+%\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+\documentclass{beamer}
+% https://sourceforge.net/tracker/index.php?func=detail&aid=1848912&group_id=92412&atid=600660
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+
+\usepackage[english]{babel}
+\usepackage[babel,english=american,german=guillemets]{csquotes}	% french
+\usepackage{microtype}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning}
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline}{}
+\usepackage{ulem}
+
+% colors for listings
+\definecolor{lightergray}{gray}{.95}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkerblue}{rgb}{0,0,0.4}
+\definecolor{darkergreen}{rgb}{0,0.4,0}
+\definecolor{darkerred}{rgb}{0.4,0,0}
+
+\usepackage{listings}
+% \lstloadlanguages{HTML,XML}
+\lstset{
+    basicstyle=\ttfamily\small\mdseries,
+    keywordstyle=\bfseries\color{darkblue},
+    identifierstyle=,
+    commentstyle=\color{darkgray},
+    stringstyle=\itshape\color{darkred},
+    frame=none,
+    showstringspaces=false,
+    tabsize=4,
+    backgroundcolor=\color{lightergray},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newcommand{\strong}[1]{\@strong{#1}}
+\newcommand{\@@strong}[1]{\textbf{\let\@strong\@@@strong#1}}
+\newcommand{\@@@strong}[1]{\textnormal{\let\@strong\@@strong#1}}
+\let\@strong\@@strong
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% preparations for beamer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useinnertheme{default}
+\useoutertheme{infolines}
+%\usecolortheme[rgb={0.28,0.37,0.52}]{structure}
+\usecolortheme[rgb={0.18,0.23,0.33}]{structure}
+%\usecolortheme{beaver}
+\usefonttheme{structurebold}
+
+%%% Ränder vergrößern für's Café Central
+\setbeamersize{text margin left=1.2cm}
+\setbeamersize{text margin right=1.2cm}
+
+%%% let hyperlinks look like hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=darkblue
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% images
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pgfdeclareimage[width=\textwidth]{jsonc1}{json-c_volunteer_1.png}
+\pgfdeclareimage[width=\textwidth]{jsonc2}{json-c_volunteer_2.png}
+\pgfdeclareimage[width=\textwidth]{jsonc3}{json-c_volunteer_3.png}
+%\pgfdeclareimage[width=0.6\textwidth]{psituxsmileybeispiel}{psi_tux_smiley_beispiel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% title, author, date
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[CMake]{Building C/C++ Projects with (Modern) CMake}
+\subtitle{Powerful Cross Platform Build Process Management}
+\author{Alexander Dahl}
+\institute[lespocky.de]{\url{http://www.lespocky.de/}}
+\date{2018-10-22}
+\subject{subj}
+\keywords{CMake, Compiler, C, C++, Software, Build}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \tableofcontents
+\end{frame}
+
+
+\section*{Who?}
+
+\begin{frame}
+    \frametitle{Me}
+    \framesubtitle{Yet another free software developer \dots}
+
+    \begin{block}{Background}
+        \begin{itemize}
+            \item using Free Software since $\approx 2001$
+            \item contributing to Free Software since $\approx 2003$
+            \item diploma in engineering (mechatronics)
+            \item working as Embedded Linux developer
+        \end{itemize}
+    \end{block}
+
+    \pause
+
+    \begin{block}{Projects}
+        \begin{itemize}
+            \item fli4l
+            \item buildroot
+            \item ptxdist
+            \item libcgi
+            \item Freifunk
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+
+\section{What?}
+
+\frame{\tableofcontents[currentsection]}
+
+\begin{frame}{CMake}
+\end{frame}
+
+
+\section{How?}
+
+\frame{\tableofcontents[currentsection]}
+
+\section*{What else?}
+
+\begin{frame}{Legal Stuff}
+\end{frame}
+
+\begin{frame}{The Last Slide}
+    \begin{block}{Contact Me}
+        \begin{description}
+            \item [E-Mail] \href{mailto:post@lespocky.de}{post@lespocky.de}
+            \item [WWW] \href{http://www.lespocky.de/}{lespocky.de} or
+                    \href{http://blog.antiblau.de/}{blog.antiblau.de}
+            \item [Twitter] \href{https://twitter.com/LeSpocky}{@LeSpocky}
+        \end{description}
+    \end{block}
+    \begin{block}{Slides}
+        \begin{itemize}
+            \item \texttt{hg clone https://bitbucket.org/lespocky/talks}
+        \end{itemize}
+    \end{block}
+    \begin{block}{License}
+        These slides are licensed under the Creative Commons
+        Attribution-ShareAlike 4.0 International License. (CC BY-SA 4.0) \\
+        To view a copy of this license, visit
+        \url{http://creativecommons.org/licenses/by-sa/4.0/}.
+    \end{block}
+\end{frame}
+
+\end{document}
