@@ -43,6 +43,7 @@
 
 ## syntax
 
+* one or multiple files called `CMakeLists.txt`
 * very first command in every top level CMakeLists.txt is like this:
 
     cmake_minimum_required(VERSION 3.1)
@@ -60,48 +61,7 @@
   * whitespace does not matter
   * comments start with '#' and go till end of line
   * avoid comments inside function call parenthesis
-
-## targets
-
-### define them
-
-* target for a simple executable (you don't need to add header files here)
-
-    add_executable(one two.cpp three.h)
-
-* target name is 'one'
-* build library as simple:
-
-    add_library(one STATIC two.cpp three.h)
-
-* or omit STATIC and let `BUILD_SHARED_LIBS` decide
-* also INTERFACE and ALIAS targets
-
-### add information needed for build
-
-* `target_include_directories()`
-  * PUBLIC, PRIVATE, INTERFACE
-* `target_link_libraries()`
-  * THIS is the most powerful and central command
-* targets can have more: properties, compile options, compile definitions,
-  compile features, …
-  * the latter are just properties with special meanings
-* see all the `target_*()` functions
-
-### export and import them
-
-* export your library targets, so others can use your library
-* use imported targets (`find_package()`) to have that ready for `target_link_libraries()`
-
-### chain targets
-
-* use target names as argument for `target_link_libraries()`
-  * make sure what you provide as target name is actually a target,
-    best way is to use namespaces (see ALIAS targets)
-  * use PUBLIC, PRIVATE and INTERFACE to not propagate non necessary dependencies
-* possible are all kinds of targets
-* this creates some kind of dependency tree
-* CMake takes care of building things in the right order
+  * variable expansion with ${VARNAME}
 
 ## variables and properties
 
@@ -133,19 +93,67 @@
 * `BUILD_SHARED_LIBS`
   * global CMake variable to control if static or shared libraries are built
 
+## targets
+
+### define them
+
+* target for a simple executable (you don't need to add header files here)
+
+    add_executable(one two.cpp three.h)
+    target_link_libraries(one
+        two
+    )
+
+* target name is 'one'
+* build library as simple:
+
+    add_library(two STATIC two.cpp three.h)
+
+* or omit STATIC and let `BUILD_SHARED_LIBS` decide
+* also INTERFACE and ALIAS targets
+
+### add information needed for build
+
+* `target_include_directories()`
+  * PUBLIC, PRIVATE, INTERFACE
+* targets can have more: properties, compile options, compile definitions,
+  compile features, …
+  * the latter are just properties with special meanings
+* see all the `target_*()` functions
+* `target_link_libraries()`
+  * THIS is the most powerful and central command
+
+### chain targets
+
+* use target names as argument for `target_link_libraries()`
+  * make sure what you provide as target name is actually a target,
+    best way is to use namespaces (see ALIAS targets)
+  * use PUBLIC, PRIVATE and INTERFACE to not propagate non necessary dependencies
+* possible are all kinds of targets
+* this creates some kind of dependency tree
+* CMake takes care of building things in the right order
+
+### export and import of targets
+
+* use imported targets (`find_package()`) to have that ready for `target_link_libraries()`
+* export your library targets, so others can use your library
+
 ## generate things to be built
 
 * use `configure_file()`
 * for example create a `version.h` from a `version.h.in` and substitute
   placeholders with contents of CMake variables
-* set preprocessor switches from CMake options
+* set preprocessor switches from CMake options (#cmakedefine)
 * same mechanism is used for so called “CMake package files” used to export
   library targets
 * more complex things involve custom targets, and custom commands
+  * cmake scripts called "cmake modules"
 
 ## cross compiling
 
 * toolchain files
+  * cmake script, where some special variables are set
+  * cross-compiler prefix, sysroot folder, …
 
 ## Programming and extending
 
@@ -169,7 +177,9 @@
 * treat your CMakeLists.txt as code, readable and well documented
 * think in targets
 * export your targets
-* make alias targets to make use of `add_subdirectory` and `find_package` consistent
+* make alias targets (use namespaces for target names)
+  to make use of `add_subdirectory` and `find_package` consistent
+  * for ensuring `target_link_libraries()` uses a target
 * lower case functions names
 
 ## Antipatterns
@@ -182,6 +192,8 @@
     * meta compiler features (CMake 3.8+)
     * compiler features (CMake 3.1+)
     * per target properties (`CXX_STANDARD`, …)
+  * know `CMAKE_BUILD_TYPE`
+  * if you need that, set from "outside" (e.g. CMake Cache)
 
 ## Related tools
 
