@@ -63,8 +63,8 @@
 \usefonttheme{structurebold}
 
 %%% Ränder vergrößern für's Café Central
-\setbeamersize{text margin left=1.2cm}
-\setbeamersize{text margin right=1.2cm}
+%\setbeamersize{text margin left=1.2cm}
+%\setbeamersize{text margin right=1.2cm}
 
 %%% let hyperlinks look like hyperlinks
 \hypersetup{
@@ -76,10 +76,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% images
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pgfdeclareimage[width=\textwidth]{jsonc1}{json-c_volunteer_1.png}
-\pgfdeclareimage[width=\textwidth]{jsonc2}{json-c_volunteer_2.png}
-\pgfdeclareimage[width=\textwidth]{jsonc3}{json-c_volunteer_3.png}
-%\pgfdeclareimage[width=0.6\textwidth]{psituxsmileybeispiel}{psi_tux_smiley_beispiel}
+\pgfdeclareimage[width=0.4\textwidth]{cmakelogo}{resources/Cmake.svg.png}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% title, author, date
@@ -139,7 +136,26 @@
 
 \frame{\tableofcontents[currentsection]}
 
-\begin{frame}{CMake}
+\begin{frame}[fragile]{CMake}
+    \begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+            \pgfuseimage{cmakelogo}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \begin{lstlisting}[%
+                %basicstyle=\ttfamily\small\mdseries
+                basicstyle=\ttfamily\footnotesize\mdseries
+                %basicstyle=\ttfamily\tiny\mdseries
+            ]
+cmake_minimum_required(VERSION 3.1)
+project(MyProject
+    VERSION 1.0
+    DESCRIPTION "Very nice project"
+    LANGUAGES CXX
+)
+            \end{lstlisting}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 
