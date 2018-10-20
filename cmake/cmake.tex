@@ -76,7 +76,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% images
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pgfdeclareimage[width=0.4\textwidth]{cmakelogo}{resources/Cmake.svg.png}
+\pgfdeclareimage[width=0.3\textwidth]{cmakelogo}{resources/Cmake.svg.png}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% title, author, date
@@ -98,9 +98,9 @@
     \titlepage
 \end{frame}
 
-\begin{frame}
-    \tableofcontents
-\end{frame}
+%\begin{frame}
+%    \tableofcontents
+%\end{frame}
 
 
 \section*{Who?}
@@ -109,39 +109,54 @@
     \frametitle{Me}
     \framesubtitle{Yet another free software developer \dots}
 
-    \begin{block}{Background}
-        \begin{itemize}
-            \item using Free Software since $\approx 2001$
-            \item contributing to Free Software since $\approx 2003$
-            \item diploma in engineering (mechatronics)
-            \item working as Embedded Linux developer
-        \end{itemize}
-    \end{block}
-
-    \pause
-
-    \begin{block}{Projects}
-        \begin{itemize}
-            \item fli4l
-            \item buildroot
-            \item ptxdist
-            \item libcgi
-            \item Freifunk
-        \end{itemize}
-    \end{block}
+    \begin{columns}[T]
+        \begin{column}{0.7\textwidth}
+            \begin{block}{Background}
+                \begin{itemize}
+                    \item using Free Software since $\approx 2001$
+                    \item contributing to Free Software since $\approx 2003$
+                    \item diploma in engineering (mechatronics)
+                    \item working as Embedded Linux developer
+                    \item member of \href{http://www.netz39.de/}{Netz39} Hackerspace
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \pause
+        \begin{column}{0.3\textwidth}
+            \begin{block}{Projects}
+                \begin{itemize}
+                    \item \href{https://www.fli4l.de/}{fli4l}
+                    \item \href{https://buildroot.org/}{buildroot}
+                    \item \href{https://ptxdist.org/}{ptxdist}
+                    \item \href{https://github.com/rafaelsteil/libcgi}{libcgi}
+                    \item \href{https://freifunk.net/}{Freifunk}
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 
-\section{What?}
+\section{CMake}
 
-\frame{\tableofcontents[currentsection]}
+%\frame{\tableofcontents[currentsection]}
 
 \begin{frame}[fragile]{CMake}
     \begin{columns}[T]
         \begin{column}{0.4\textwidth}
-            \pgfuseimage{cmakelogo}
+            \begin{itemize}
+                \item Build C/C++ projects
+                \item Compiler independent
+                \item Cross platform
+                \item Together with native build environment
+                \item Simple configuration with \texttt{CMakeLists.txt} files
+                \item Out-of-source builds
+                \item Free Software
+                \item And more …
+            \end{itemize}
         \end{column}
         \begin{column}{0.6\textwidth}
+            \pgfuseimage{cmakelogo}
             \begin{lstlisting}[%
                 %basicstyle=\ttfamily\small\mdseries
                 basicstyle=\ttfamily\footnotesize\mdseries
@@ -158,10 +173,64 @@ project(MyProject
     \end{columns}
 \end{frame}
 
+\begin{frame}{Getting Started}
+    \begin{block}{Installation}
+        \begin{itemize}
+            \item Linux: Use your package manager
+            \item Windows, MacOS: Download from \url{https://cmake.org/}
+            \item From Source with your favorite C++ Compiler
+        \end{itemize}
+    \end{block}
+    \pause
+    \begin{block}{Documentation}
+        \begin{itemize}
+            \item CMake comes well documented
+                \begin{itemize}
+                    \begin{scriptsize}
+                    \item \url{https://cmake.org/documentation}
+                    \item \url{https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html}
+                    \item \url{https://cmake.org/cmake/help/latest/manual/cmake-language.7.html}
+                    \end{scriptsize}
+                \end{itemize}
+            \item on the world wide web
+                \begin{itemize}
+                    \item look out for \enquote{Modern CMake}
+                    \item beware of examples showing old way to do things
+                \end{itemize}
+        \end{itemize}
+    \end{block}
+\end{frame}
 
-\section{How?}
+\begin{frame}[fragile]{Usage}
+    \begin{itemize}
+        \item Use out of tree builds
+    \end{itemize}
+    \begin{block}{Command Line}
+        \begin{lstlisting}[%
+            basicstyle=\ttfamily\small\mdseries
+            %basicstyle=\ttfamily\footnotesize\mdseries
+            %basicstyle=\ttfamily\scriptsize\mdseries
+            %basicstyle=\ttfamily\tiny\mdseries
+        ]
+~/path/to/your/src $ mkdir build
+~/path/to/your/src $ cd build
+~/path/to/your/src/build $ cmake ..
+~/path/to/your/src/build $ make
+        \end{lstlisting}
+    \end{block}
+    \begin{itemize}
+        \item first call to \texttt{cmake} is special, sets generator and compiler
+        \item pre-set options with \texttt{-D}
+            \begin{itemize}
+                \item you can overwrite options again later
+                \item useful when building from some external build system (like buildroot, ptxdist, …)
+            \end{itemize}
+    \end{itemize}
+\end{frame}
 
-\frame{\tableofcontents[currentsection]}
+%\section{How?}
+%
+%\frame{\tableofcontents[currentsection]}
 
 \section*{What else?}
 
