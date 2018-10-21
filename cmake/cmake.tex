@@ -78,6 +78,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pgfdeclareimage[width=0.3\textwidth]{cmakelogo}{resources/Cmake.svg.png}
 \pgfdeclareimage[height=0.8\textheight]{screenshot-gui}{resources/Screenshot_20181021_141444.png}
+\pgfdeclareimage[width=0.6\textwidth]{screenshot-generators}{resources/Screenshot_GUI_Generators.png}
+\pgfdeclareimage[width=0.5\textwidth]{screenshot-compiler}{resources/Screenshot_20181021_144601.png}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% title, author, date
@@ -138,7 +140,7 @@
 \end{frame}
 
 
-\section{CMake}
+\section{Usage}
 
 %\frame{\tableofcontents[currentsection]}
 
@@ -187,11 +189,8 @@ project(MyProject
         \begin{itemize}
             \item CMake comes well documented
                 \begin{itemize}
-                    \begin{scriptsize}
                     \item \url{https://cmake.org/documentation}
-                    \item \url{https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html}
-                    \item \url{https://cmake.org/cmake/help/latest/manual/cmake-language.7.html}
-                    \end{scriptsize}
+                    \item \texttt{man 7 cmake-*}
                 \end{itemize}
             \item on the world wide web
                 \begin{itemize}
@@ -231,6 +230,59 @@ project(MyProject
 
 \begin{frame}{GUI}
     \pgfuseimage{screenshot-gui}
+\end{frame}
+
+\begin{frame}{Generators}
+    \begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+            \begin{itemize}
+                \item Makefiles
+                    \begin{itemize}
+                        \item Borland
+                        \item MSYS
+                        \item MinGW
+                        \item NMake
+                        \item Unix
+                        \item …
+                    \end{itemize}
+                \item Ninja
+                \item Visual Studio
+                \item Xcode
+                \item …
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \pgfuseimage{screenshot-generators}
+        \end{column}
+    \end{columns}
+
+    \begin{block}{Help}
+        \texttt{cmake-generators(7)}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Compilers}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item AppleClang
+                \item Clang
+                \item GNU (GCC)
+                \item MSVC (Visual Studio)
+                \item SunPro
+                \item Intel
+                \item XL (IBM)
+                \item …
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \pgfuseimage{screenshot-compiler}
+        \end{column}
+    \end{columns}
+
+    \begin{block}{Help}
+        \texttt{cmake-compile-features(7)}
+    \end{block}
 \end{frame}
 
 %\section{How?}
