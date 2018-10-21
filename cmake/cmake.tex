@@ -77,6 +77,7 @@
 %%% images
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pgfdeclareimage[width=0.3\textwidth]{cmakelogo}{resources/Cmake.svg.png}
+\pgfdeclareimage[width=\textwidth]{screenshot-gui}{resources/Screenshot_20181021_140311.png}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% title, author, date
@@ -226,6 +227,10 @@ project(MyProject
                 \item useful when building from some external build system (like buildroot, ptxdist, …)
             \end{itemize}
     \end{itemize}
+\end{frame}
+
+\begin{frame}{GUI}
+    \pgfuseimage{screenshot-gui}
 \end{frame}
 
 %\section{How?}
