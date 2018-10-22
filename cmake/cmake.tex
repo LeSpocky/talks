@@ -719,6 +719,67 @@ install(FILES
 %    \end{block}
 \end{frame}
 
+\begin{frame}[fragile]{CMake Package Config File}
+    \begin{lstlisting}[%
+        %basicstyle=\ttfamily\small\mdseries
+        %basicstyle=\ttfamily\footnotesize\mdseries
+        %basicstyle=\ttfamily\scriptsize\mdseries
+        %basicstyle=\ttfamily\tiny\mdseries
+    ]
+# tbd
+    \end{lstlisting}
+\end{frame}
+
+\subsection{Miscellaneous Tips and Tricks}
+
+\begin{frame}{Generate Things at Build Time}
+    \begin{block}{\texttt{configure\_file()}}
+        \begin{itemize}
+            \item Create \texttt{version.h} from
+                \texttt{version.h.in}
+            \item Substitute placeholders with contents of CMake
+                variables
+            \item Set Preprocessor switches from CMake options with
+                \texttt{\#cmakedefine}
+        \end{itemize}
+    \end{block}
+
+    \pause
+
+    \begin{block}{Custom Targets and Custom Commands}
+        \begin{itemize}
+            \item \texttt{add\_custom\_command()} to call external tools
+                generating things
+            \item \texttt{add\_custom\_target()} for always to built
+                targets
+            \item Functions, macros, and programming directives
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Related Tools}
+    \begin{itemize}
+        \item CTest
+            \begin{itemize}
+                \item Test driver for your unit tests
+                \item \texttt{enable\_testing()} and \texttt{add\_test()}
+            \end{itemize}
+        \item CPack
+            \begin{itemize}
+                \item Tarballs
+                \item Debian-Packages
+                \item Installers (may need external Tools)
+                \item …
+            \end{itemize}
+        \item \href{https://www.cdash.org/}{CDash}
+            \begin{itemize}
+                \item Web-based software testing server
+                \item CTest can report to CDash
+                \item Runs valgrind, coverage tools, …
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
 \section*{What else?}
 
 %\begin{frame}{Legal Stuff}
