@@ -92,12 +92,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% title, author, date
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title[CMake]{Building C/\CPP\ Projects with (Modern) CMake}
+\title[CMake]{Building C/C++ Projects with (Modern) CMake}
 \subtitle{Powerful Cross Platform Build Process Management}
 \author{Alexander Dahl}
 \institute[lespocky.de]{\url{http://www.lespocky.de/}}
 \date{2018-10-22}
-\subject{subj}
+%\subject{subj}
 \keywords{CMake, Compiler, C, C++, Software, Build}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -626,6 +626,97 @@ target_link_libraries(one
         \item Lower case functions names
         \item Upper case variable names
     \end{itemize}
+\end{frame}
+
+\subsection{Imported/Exported Targets and CMake Packages}
+
+\begin{frame}[fragile]{Imported Targets}
+    \begin{itemize}
+        \item Modern \texttt{find\_package} modules provide
+            IMPORTED targets
+            \begin{itemize}
+                \item e.\,g. \texttt{OpenSSL::SSL}, see
+                    \href{https://cmake.org/cmake/help/latest/manual/cmake-modules.7.html}{cmake-modules(7)}
+            \end{itemize}
+    \end{itemize}
+
+    \begin{lstlisting}[%
+        %basicstyle=\ttfamily\small\mdseries
+        %basicstyle=\ttfamily\footnotesize\mdseries
+        %basicstyle=\ttfamily\scriptsize\mdseries
+        %basicstyle=\ttfamily\tiny\mdseries
+    ]
+find_package(OpenSSL)
+target_link_libraries(one
+PRIVATE
+    OpenSSL::Crypto
+)
+    \end{lstlisting}
+
+    \begin{itemize}
+        \item Use \texttt{find\_package(PkgConfig)} and
+            \texttt{pkg\_check\_modules()} with option
+            \texttt{IMPORTED\_TARGET}
+        \item Create IMPORTED targets with \texttt{add\_library()}
+            for your own \texttt{FindFoo.cmake} modules
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Export Library Targets}
+    \begin{lstlisting}[%
+        %basicstyle=\ttfamily\small\mdseries
+        %basicstyle=\ttfamily\footnotesize\mdseries
+        %basicstyle=\ttfamily\scriptsize\mdseries
+        %basicstyle=\ttfamily\tiny\mdseries
+    ]
+include(GNUInstallDirs)				# cmake 2.8.5
+
+install(TARGETS two
+	EXPORT two-targets
+	LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+	ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+)
+
+install(EXPORT two-targets
+	NAMESPACE two::
+	DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/two"
+)
+    \end{lstlisting}
+
+    \begin{block}{Help}
+        \href{https://cmake.org/cmake/help/latest/manual/cmake-packages.7.html}{cmake-packages(7)}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Create (Relocatable) CMake Packages}
+    \begin{lstlisting}[%
+        %basicstyle=\ttfamily\small\mdseries
+        basicstyle=\ttfamily\footnotesize\mdseries
+        %basicstyle=\ttfamily\scriptsize\mdseries
+        %basicstyle=\ttfamily\tiny\mdseries
+    ]
+include(CMakePackageConfigHelpers)	# cmake 2.8.8
+
+configure_package_config_file(two-config.cmake.in
+	"${CMAKE_CURRENT_BINARY_DIR}/two-config.cmake"
+	INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/two"
+	PATH_VARS CMAKE_INSTALL_INCLUDEDIR
+	NO_CHECK_REQUIRED_COMPONENTS_MACRO
+)
+write_basic_package_version_file(
+	"${CMAKE_CURRENT_BINARY_DIR}/two-config-version.cmake"
+	COMPATIBILITY SameMajorVersion
+)
+install(FILES
+	"${CMAKE_CURRENT_BINARY_DIR}/two-config.cmake"
+	"${CMAKE_CURRENT_BINARY_DIR}/two-config-version.cmake"
+	DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/two"
+)
+    \end{lstlisting}
+
+%    \begin{block}{Help}
+%        \href{https://cmake.org/cmake/help/latest/manual/cmake-packages.7.html}{cmake-packages(7)}
+%    \end{block}
 \end{frame}
 
 \section*{What else?}
