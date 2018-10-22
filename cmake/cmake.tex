@@ -632,7 +632,8 @@ target_link_libraries(one
 
 \begin{frame}[fragile]{Imported Targets}
     \begin{itemize}
-        \item Modern \texttt{find\_package} modules provide
+        \item CMake looks for CMake Packages with exported targets first
+        \item Modern \texttt{find\_package()} modules provide
             IMPORTED targets
             \begin{itemize}
                 \item e.\,g. \texttt{OpenSSL::SSL}, see
@@ -647,9 +648,9 @@ target_link_libraries(one
         %basicstyle=\ttfamily\tiny\mdseries
     ]
 find_package(OpenSSL)
-target_link_libraries(one
-PRIVATE
-    OpenSSL::Crypto
+target_link_libraries(two
+    PUBLIC
+        OpenSSL::Crypto
 )
     \end{lstlisting}
 
@@ -726,8 +727,23 @@ install(FILES
         %basicstyle=\ttfamily\scriptsize\mdseries
         %basicstyle=\ttfamily\tiny\mdseries
     ]
-# tbd
+@PACKAGE_INIT@
+
+get_filename_component(two_CMAKE_DIR
+    "${CMAKE_CURRENT_LIST_FILE}" PATH
+)
+include(CMakeFindDependencyMacro)
+
+find_dependency(OpenSSL REQUIRED)
+
+if(NOT TARGET two::two)
+	include("${two_CMAKE_DIR}/two-targets.cmake")
+endif()
     \end{lstlisting}
+
+    \begin{block}{Help}
+        \href{https://cmake.org/cmake/help/latest/manual/cmake-packages.7.html}{cmake-packages(7)}
+    \end{block}
 \end{frame}
 
 \subsection{Miscellaneous Tips and Tricks}
@@ -741,6 +757,8 @@ install(FILES
                 variables
             \item Set Preprocessor switches from CMake options with
                 \texttt{\#cmakedefine}
+            \item \texttt{configure\_package\_config\_file()} uses the
+                same mechanism
         \end{itemize}
     \end{block}
 
