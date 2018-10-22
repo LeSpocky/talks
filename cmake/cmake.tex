@@ -562,6 +562,65 @@ target_link_libraries(one
     \end{itemize}
 \end{frame}
 
+\subsection{Patterns}
+
+\begin{frame}{Antipatterns}
+    \begin{alertblock}{Avoid functions with global scope!}
+        \begin{itemize}
+            \item e.\,g. \texttt{link\_directories()},
+                \texttt{include\_libraries()}
+        \end{itemize}
+    \end{alertblock}
+
+    \pause
+
+    \begin{alertblock}{Do not set compiler flags in \texttt{CMakeLists.txt}}
+        \begin{itemize}
+            \item Breaks portability between different compilers
+        \end{itemize}
+    \end{alertblock}
+
+    \pause
+
+    \begin{exampleblock}{Alternatives}
+        \begin{itemize}
+            \item Require language standards (e.\,g. C99, C++11, …)
+                \begin{itemize}
+                    \item Meta compiler features (CMake 3.8+)
+                    \item Compiler features (CMake 3.1+)
+                    \item Per target properties
+                        (\texttt{CXX\_STANDARD}, …)
+                \end{itemize}
+            \item Manually override compiler flags from
+                \enquote{outside} (e.\,g. CMake Cache)
+            \item Make use of \texttt{CMAKE\_BUILD\_TYPE}
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Best Practices}
+    \begin{itemize}
+        \item Define everything per target
+        \item Treat your \texttt{CMakeLists.txt} as code
+            \begin{itemize}
+                \item Readable
+                \item Well documented
+                \item Put \texttt{CMakeLists.txt} in version control
+            \end{itemize}
+        \item Think in targets
+        \item Export your targets
+        \item Make alias targets (aka namespaces for target names)
+            \begin{itemize}
+                \item Make use of \texttt{add\_subdirectory()} and
+                    \texttt{find\_package()} consistent
+                \item Ensure \texttt{target\_link\_libraries()} uses a
+                    target
+            \end{itemize}
+        \item Lower case functions names
+        \item Upper case variable names
+    \end{itemize}
+\end{frame}
+
 \section*{What else?}
 
 %\begin{frame}{Legal Stuff}
