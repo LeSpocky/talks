@@ -46,12 +46,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% macros
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% strong emphasis (like in HTML)
 \makeatletter
 \newcommand{\strong}[1]{\@strong{#1}}
 \newcommand{\@@strong}[1]{\textbf{\let\@strong\@@@strong#1}}
 \newcommand{\@@@strong}[1]{\textnormal{\let\@strong\@@strong#1}}
 \let\@strong\@@strong
 \makeatother
+
+% C++ like the C++ FAQ proposes
+% https://isocpp.org/wiki/faq/misc-environmental-issues#latex-macros
+\newcommand{\CXX}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
+\def\CPP{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% preparations for beamer
@@ -85,7 +92,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% title, author, date
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title[CMake]{Building C/C++ Projects with (Modern) CMake}
+\title[CMake]{Building C/\CPP\ Projects with (Modern) CMake}
 \subtitle{Powerful Cross Platform Build Process Management}
 \author{Alexander Dahl}
 \institute[lespocky.de]{\url{http://www.lespocky.de/}}
@@ -150,7 +157,7 @@
     \begin{columns}[T]
         \begin{column}{0.4\textwidth}
             \begin{itemize}
-                \item Build C/C++ projects
+                \item Build C/\CPP\ projects
                 \item Compiler independent
                 \item Cross platform
                 \item Together with native build environment
@@ -184,7 +191,7 @@ project(MyProject
         \begin{itemize}
             \item Linux: Use your package manager
             \item Windows, MacOS: Download from \url{https://cmake.org/}
-            \item From Source with your favorite C++ Compiler
+            \item From Source with your favorite \CPP\ Compiler
         \end{itemize}
     \end{block}
     \pause
@@ -584,7 +591,7 @@ target_link_libraries(one
 
     \begin{exampleblock}{Alternatives}
         \begin{itemize}
-            \item Require language standards (e.\,g. C99, C++11, …)
+            \item Require language standards (e.\,g. C99, \CPP 11, …)
                 \begin{itemize}
                     \item Meta compiler features (CMake 3.8+)
                     \item Compiler features (CMake 3.1+)
