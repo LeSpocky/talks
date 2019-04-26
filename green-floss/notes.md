@@ -88,6 +88,51 @@ Freie Software, um …
 ## Projekte
 
 * coreboot
+* Sonoff-Tasmota
+* OpenWRT, fli4l, andere Router-Distributionen
+* [Rockbox](https://www.rockbox.org/)
+* [LineageOS](https://lineageos.org/)
+
+### Linux auf alten Laptops/Rechnern
+
+* selber machen: [Linux Presentation Day](https://l-p-d.org/)
+* auf neuen Rechnern
+  * [TUXEDO](https://www.tuxedocomputers.com/)
+  * [Debian Händler](https://www.debian.org/distrib/pre-installed#de)
+* [Ubuntu](https://wiki.ubuntuusers.de/Alte_Hardware/)
+
+#### Systemanforderungen
+
+##### Ubuntu
+
+|            Systemanforderungen                |
+| Derivat      | Mindestanforderung | Empfohlen |
+| ------------ | ------------------ | --------- |
+| Lubuntu      | 512 MB             | >1,5 GB   |
+| Xubuntu      |   1 GB             | >2GB      |
+| Kubuntu      | 1,5 GB             | >4GB      |
+| Mate         | 1,5 GB             | >4GB      |
+| Budgie       | 1,5 GB             | >4GB      |
+| Ubuntu GNOME | 1,5 GB             | >4GB      |
+
+##### Windows
+
+Minimalanforderungen!
+
+* https://support.microsoft.com/de-de/help/10737/windows-7-system-requirements
+* https://support.microsoft.com/de-de/help/12660/windows-8-system-requirements
+* https://www.microsoft.com/de-de/windows/Windows-10-specifications
+* https://praxistipps.chip.de/windows-10-systemanforderungen_96868
+* http://www.pcgameshardware.de/Windows-8-Software-237450/News/Systemanforderungen-Windows-8-Windows-7-1032219/
+* https://www.pcwelt.de/ratgeber/Windows-8-Funktionen-Hardware-Anforderungen-6633366.html
+* https://tipps.computerbild.de/software/windows/windows-10-systemanforderungen-303725.html
+
+| Version |
+| ------- |
+| 7       | 1 GHz | 2 GB |      | 20 GB |
+| 10      | 1 GHz | 2 GB | 4 GB | 32 GB |
+
+* realistisch: mindestens 100 GB HD, mindestens 4 GB RAM
 
 ### Fairphone
 
