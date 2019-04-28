@@ -20,7 +20,7 @@ Quelle: [IT goes green](https://www.umweltinnovationsprogramm.de/foerderschwerpu
     * Zugang zu Internet, Software
     * digitale Exklusion
 
-* Verbrauch 
+* Verbrauch
   * Herstellung: Ressourcen (Stoffe), Energie
   * Betrieb: Energie (braucht auch Ressourcen), weniger und/oder grüne
   * Entsorgung: Reparatur? Recycling? Sondermüll?
@@ -34,7 +34,7 @@ Freie Software, um …
 * Lebensdauer zu verlängern
 * Reduktion von Ressourcen- und Energieverbrauch in anderen Bereichen zu erreichen (Verkehr, Heizung, Solaranlagen, …)
 
-## Literatur 
+## Literatur
 
 * [Open Source und Nachhaltigkeit](https://www.golem.de/0803/58082.html) (2008)
 
@@ -44,7 +44,7 @@ Freie Software, um …
 
 ## Resources
 
-* Wikipedia: 
+* Wikipedia:
   * [Digitale Nachhaltigkeit](https://de.wikipedia.org/wiki/Digitale_Nachhaltigkeit)
     * → bezieht sich auf immaterielle Güter
   * [Green IT](https://de.wikipedia.org/wiki/Green_IT)
@@ -99,7 +99,26 @@ Freie Software, um …
 * auf neuen Rechnern
   * [TUXEDO](https://www.tuxedocomputers.com/)
   * [Debian Händler](https://www.debian.org/distrib/pre-installed#de)
+
+#### Presse
+
 * [Ubuntu](https://wiki.ubuntuusers.de/Alte_Hardware/)
+* [Focus](https://www.focus.de/digital/computer/pc-tipps/computer-mit-linux-alte-rechner-weiter-nutzen_id_4041306.html) (2014, dpa)
+* [berlios.de](https://www.berlios.de/linux-fuer-alte-rechner/)
+* [golem.de](https://www.golem.de/news/alles-andere-als-schrottreif-neue-linux-distributionen-fuer-alte-computer-1510-116627.html) (2015)
+* [pc-magazin.de](https://www.pc-magazin.de/ratgeber/linux-fuer-alte-rechner-pc-notebook-netbook-3197704.html) (2017)
+  * Stromverbrauch von älteren Rechnern ggf. höher! (speziell alles bis Pentium 4)
+* [pcwelt.de](https://www.pcwelt.de/ratgeber/Special-Linux-Frisches-Linux-fuer-aeltere-Hardware-8689124.html) (2019)
+  * inklusive Links auf Seiten, die ältere Hardware verkaufen
+
+#### Distributionen
+
+* [lubuntu](https://lubuntu.net/)
+* [Bodhi Linux](https://www.bodhilinux.com/)
+* [DistroWatch.com](https://distrowatch.com/)
+  * [Old Computers](https://distrowatch.com/search.php?category=Old+Computers#simple)
+* [antiX](https://antixlinux.com/)
+* [ReactOS](https://www.reactos.org/)
 
 #### Systemanforderungen
 
@@ -138,7 +157,15 @@ Minimalanforderungen!
 
 * [Zweites Fairphone: neuer Fertiger, höherwertigere Hardware](http://heise.de/-2576107) (2015)
 * [Fairphone im Kurztest](https://heise.de/-2073866) (2014)
-  
+* FP2 Auslieferung ab Weihnachten 2015 mit Android 5.1 (Lollipop)
+  * Android 6.0.1 (Marshmallow), April 2017
+  * Android 7.1.2 (Nougat), November 2018
+  * LineageOS und Android 8.1 (Oreo) seit August 2018
+  * d.h. aktuelles Android für ein Gerät von 2015!
+* siehe bspw.
+  * [@SecX13](https://twitter.com/SecX13/status/968225118517452800)
+  * [@SecX13](https://twitter.com/SecX13/status/1115380640298487808)
+
 ## Gemischte Ideen
 
 * Dieselskandal mit Schummelsoftware mit freier Software möglich gewesen?
