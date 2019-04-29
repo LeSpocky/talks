@@ -88,6 +88,7 @@
 %\pgfdeclareimage[height=0.8\paperheight]{sdg}{sdg}
 \pgfdeclareimage[width=\textwidth]{sdg}{sdg}
 \pgfdeclareimage[width=0.18\textwidth]{fp2}{resources/fairphone/webshop_1428x1428_indigo.jpg}
+\pgfdeclareimage[width=0.48\textwidth]{rockbox}{resources/rockbox/ipodnano2g-front.png}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% title, author, date
@@ -238,11 +239,28 @@
             2018
         \item \href{https://wiki.lineageos.org/devices/FP2}{LineageOS 15.1}
             mit Android 8.1 (Oreo) ab August 2018
-        \item beste Android Security Coverage zusammen mit einigen
-            Google Geräten
+        \item beste Android Security zusammen mit einigen Google
+            Geräten\footnote{\href{https://twitter.com/SecX13/status/1115380640298487808}{@SecX13} on Twitter}
         \item langer Android Support setzt freien Hardware Support
             voraus
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Rockbox}
+    \begin{columns}[T]
+        \begin{column}{0.45\textwidth}
+            \begin{itemize}
+                \item freies Betriebssystem für MP3-Player unter GPL
+                \item gestartet 2002 für Archos Jukebox
+                \item Support für ca. 40 Devices, auch einige Apple iPod
+                \item Unterstützung zusätzlicher Audio-Codecs
+                \item Port auf Android in Arbeit
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \pgfuseimage{rockbox}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \section*{Was noch?}
@@ -280,6 +298,10 @@
         \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{Creative
         Commons Namensnennung - Nicht-kommerziell - Weitergabe unter
         gleichen Bedingungen 4.0 International Lizenz}.
+    \end{block}
+    \begin{block}{Rockbox}
+        Bild des iPod Nano aus der Dokumentation von Rockbox unter
+        \href{https://download.rockbox.org/daily/manual/rockbox-ipodnano2g/rockbox-buildap9.html}{GNU Free Documentation License}.
     \end{block}
 \end{frame}
 
