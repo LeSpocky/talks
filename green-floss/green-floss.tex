@@ -89,6 +89,7 @@
 \pgfdeclareimage[width=\textwidth]{sdg}{sdg}
 \pgfdeclareimage[width=0.18\textwidth]{fp2}{resources/fairphone/webshop_1428x1428_indigo.jpg}
 \pgfdeclareimage[width=0.48\textwidth]{rockbox}{resources/rockbox/ipodnano2g-front.png}
+\pgfdeclareimage[width=0.3\textwidth]{wdr4300}{resources/openwrt/img_4361.jpg}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% title, author, date
@@ -263,6 +264,35 @@
     \end{columns}
 \end{frame}
 
+\begin{frame}{Linux Router}
+    \begin{itemize}
+        \item OpenWRT, fli4l, IPFire, …
+            \begin{itemize}
+                \item siehe bspw.  \href{https://en.wikipedia.org/wiki/List_of_router_and_firewall_distributions}{List of router and firewall distributions}
+            \end{itemize}
+        \item Support von Router-Herstellern für ältere Modelle endet
+            schnell
+        \item letzte Firmware von TP-Link für TL-WDR4300 von
+            2015\footnote{\tiny\url{https://www.tp-link.com/de/support/download/tl-wdr4300/\#Firmware}}
+    \end{itemize}
+    \begin{columns}[b]
+        \begin{column}{0.6\textwidth}
+            \begin{block}{OpenWRT}
+                \begin{itemize}
+                    \item Linux-Distribution für \enquote{Plasterouter}
+                    \item viele Geräte unterstützt
+                    \item aktiv gepflegt
+                    \item vollständige Router-Funktionen inkl. DNS/DHCP,
+                        WiFi, VLAN, VPN, …
+                    \item Zugriff über SSH oder Weboberfläche
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.35\textwidth}
+            \pgfuseimage{wdr4300}
+        \end{column}
+    \end{columns}
+\end{frame}
 \section*{Was noch?}
 
 \begin{frame}{Die vorletzte Folie}
