@@ -82,6 +82,8 @@ Freie Software, um …
   * [Green IT: 6-Punkte-Plan für nachhaltige Computernutzung in der Bundesverwaltung](https://www.oeko.de/presse/archiv-pressemeldungen/2016/green-it-6-punkte-plan-fuer-nachhaltige-computernutzung-in-der-bundesverwaltung/)
   * [Ressourceneffiziente Software](https://www.oeko.de/e-paper/archiv-ecowork/green-economy/arbeit-aktuell/ressourceneffiziente-software/)
   * [Nachhaltige Software](https://www.oeko.de/publikationen/p-details/nachhaltige-software/)
+  * Forschungsbereich Green Software Engineering Hochschule Trier: http://green-software-engineering.de/veroeffentlichungen.html
+
     * Abschnitt 4.6: Freie Software und ökologische Nachhaltigkeit
 * http://www.environnement-dev-educ.net/
 
