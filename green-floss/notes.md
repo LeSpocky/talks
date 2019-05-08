@@ -90,7 +90,6 @@ Freie Software, um …
 ## Projekte
 
 * coreboot
-* Sonoff-Tasmota
 * OpenWRT, fli4l, andere Router-Distributionen
 * [Rockbox](https://www.rockbox.org/)
 * [LineageOS](https://lineageos.org/)
@@ -167,6 +166,11 @@ Minimalanforderungen!
 * siehe bspw.
   * [@SecX13](https://twitter.com/SecX13/status/968225118517452800)
   * [@SecX13](https://twitter.com/SecX13/status/1115380640298487808)
+
+### IoT
+
+* [CCC](https://www.ccc.de/de/updates/2019/update-nicht-verfugbar-hersteller-nicht-zu-erreichen)
+* Sonoff-Tasmota
 
 ## Gemischte Ideen
 
