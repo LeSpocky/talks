@@ -102,6 +102,8 @@
 \pgfdeclareimage[width=0.48\textwidth]{rockbox}{resources/rockbox/ipodnano2g-front.png}
 \pgfdeclareimage[width=0.3\textwidth]{wdr4300}{resources/openwrt/img_4361.jpg}
 \pgfdeclareimage[width=0.3\textwidth]{sonoff}{resources/sonoff/sonoffbasic.jpg}
+\pgfdeclareimage[width=0.15\textwidth]{dff-logo}{resources/developers-for-future/developers-for-future-logo.png}
+\pgfdeclareimage[width=0.1\textwidth]{bub-logo}{resources/bits_und_baeume/bits-und-baeume-logo.png}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% title, author, date
@@ -387,23 +389,37 @@
 \end{frame}
 
 \begin{frame}{Weitere Projekte, Institutionen und Initiativen}
-    \begin{block}{Developers for Future}
-        \begin{itemize}
-            \item \url{https://developersforfuture.org/}
-            \item
-                \href{https://twitter.com/DevsForFuture}{@DevsForFuture}
-                bei Twitter
-            \item Unterstützung für FridaysForFuture, Bildungsarbeit, \\
-                Nachhaltige Softwareentwicklung (Open Source)
-        \end{itemize}
-    \end{block}
-    \begin{block}{Bits \& Bäume}
-        \begin{itemize}
-            \item \url{https://bits-und-baeume.org/}
-            \item Konferenz für Digitalisierung und Nachhaltigkeit
-            \item \href{https://fahrplan.bits-und-baeume.org/events/205.html}{Vortrag: Weniger Elektronikschrott durch Freie Software}
-        \end{itemize}
-    \end{block}
+    \begin{columns}[T]
+        \begin{column}{0.78\textwidth}
+            \begin{block}{Developers for Future}
+                \begin{itemize}
+                    \item \url{https://developersforfuture.org/}
+                    \item
+                        \href{https://twitter.com/DevsForFuture}{@DevsForFuture}
+                        bei Twitter
+                    \item Unterstützung für FridaysForFuture, Bildungsarbeit, \\
+                        Nachhaltige Softwareentwicklung (Open Source)
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.2\textwidth}
+            \pgfuseimage{dff-logo}
+        \end{column}
+    \end{columns}
+    \begin{columns}[T]
+        \begin{column}{0.82\textwidth}
+            \begin{block}{Bits \& Bäume}
+                \begin{itemize}
+                    \item \url{https://bits-und-baeume.org/}
+                    \item Konferenz für Digitalisierung und Nachhaltigkeit
+                    \item \href{https://fahrplan.bits-und-baeume.org/events/205.html}{Vortrag: Weniger Elektronikschrott durch Freie Software}
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.16\textwidth}
+            \pgfuseimage{bub-logo}
+        \end{column}
+    \end{columns}
     \begin{block}{Do-FOSS}
         \begin{itemize}
             \item \url{http://blog.do-foss.de/}
