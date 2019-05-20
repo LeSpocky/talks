@@ -98,7 +98,7 @@
 \subtitle{Eine nachhaltigere und umweltfreundlichere Informationstechnologie ist möglich …}
 \author{Alexander Dahl}
 \institute[blog.antiblau.de]{\url{http://blog.antiblau.de/}}
-\date{2019-04-29}
+\date{2019-05-21}
 %\subject{subj}
 %\keywords{FLOSS}
 
@@ -119,18 +119,19 @@
 \section*{Wer?}
 
 \begin{frame}
-    \frametitle{Me}
+    \frametitle{Wer}
     \framesubtitle{Yet another free software developer \dots}
 
     \begin{columns}[T]
         \begin{column}{0.7\textwidth}
-            \begin{block}{Background}
+            \begin{block}{Hintergrund}
                 \begin{itemize}
                     \item benutzt Freie Software seit $\approx 2001$
                     \item trägt zu Freier Software bei seit $\approx 2003$
                     \item Diplom-Ingenieur (Mechatronik)
                     \item arbeitet als Embedded Software Entwickler
-                    \item Mitglied des \href{http://www.netz39.de/}{Netz39} Hackerspace
+                    \item Mitglied des \href{http://www.netz39.de/}{Netz39}
+                        Hackerspace in Magdeburg
                 \end{itemize}
             \end{block}
         \end{column}
@@ -147,6 +148,7 @@
                     \item \href{https://www.denx.de/wiki/U-Boot/}{U-Boot}
                 \end{itemize}
             \end{block}
+            \input{tux.tikz}
         \end{column}
     \end{columns}
 \end{frame}
@@ -181,15 +183,15 @@
 
 \begin{frame}[c]{Green IT}
     \begin{centering}
-            \smartdiagramset{%
-                bubble center node size=3.8cm,
-                bubble center node color=green!20,
-                bubble node size=3cm,
-                bubble node font=\bfseries\Large,
-            }
-            \smartdiagram[bubble diagram]{%
-                ,Ressourcen,Langlebigkeit,Energie
-            }
+        \smartdiagramset{%
+            bubble center node size=3.8cm,
+            bubble center node color=green!20,
+            bubble node size=3cm,
+            bubble node font=\bfseries\Large,
+        }
+        \smartdiagram[bubble diagram]{%
+            ,Ressourcen,Langlebigkeit,Energie
+        }
         \par
     \end{centering}
 \end{frame}
@@ -219,15 +221,31 @@
 \end{frame}
 
 \begin{frame}{Ansätze}
-    \begin{itemize}
-        \item Energieverbrauch von IT-Systemen selbst reduzieren
-        \item Ressourcenverbrauch von IT-Systemen reduzieren \\
-            (CPU, RAM, Storage)
-        \item Lebensdauer verlängern
-        \item Reduktion von Ressourcen- und Energieverbrauch in anderen Bereichen \\
-            (Verkehr, Heizung, Solaranlagen, …)
-        \item Vermeidung von unnötigen Parallelentwicklungen
-    \end{itemize}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item Energieverbrauch von IT-Systemen selbst reduzieren
+                \item Ressourcenverbrauch von IT-Systemen reduzieren
+                    (CPU, RAM, Storage)
+                \item Lebensdauer verlängern
+                \item Reduktion von Ressourcen- und Energieverbrauch in
+                    anderen Bereichen \\ (Verkehr, Heizung,
+                    Solaranlagen, …)
+                \item Vermeidung von unnötigen Parallelentwicklungen
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \smartdiagramset{%
+                bubble center node size=2cm,
+                bubble center node color=green!20,
+                bubble node size=1.8,
+                bubble node font=\bfseries\normalsize,
+            }
+            \smartdiagram[bubble diagram]{%
+                ,Ressourcen,Langlebigkeit,Energie
+            }
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \subsection{Projekte}
