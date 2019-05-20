@@ -159,6 +159,7 @@
                     \item \href{https://www.denx.de/wiki/U-Boot/}{U-Boot}
                 \end{itemize}
             \end{block}
+            \onslide<1->
             \input{tux.tikz}
         \end{column}
     \end{columns}
@@ -231,30 +232,6 @@
     \end{block}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Forderungen des Chaos Computer Club}
-    \framesubtitle{\enquote{Update nicht verfügbar: Lieferant nicht zu
-        erreichen}\footnote{\tiny\url{https://www.ccc.de/de/updates/2019/update-nicht-verfugbar-hersteller-nicht-zu-erreichen}}}
-
-    \begin{enumerate}
-        \item \strong{Hersteller-Haftung} für einen fahrlässigen
-            Umgang mit Software-Schwachstellen würde zu gewissenhafter
-            gepflegten Produkten führen. Insbesondere im IoT-Bereich ist
-            „fire and forget“ keine nachhaltige Geschäftsstrategie.
-        \item \strong{Update-Zwang und Mindesthaltbarkeitsdatum:}
-            Mit dem Internet verbundene Geräte sollten für einen
-            garantierten Mindestzeitraum mit Sicherheitsupdates versorgt
-            werden. Das ist nicht nur eine Frage der IT-Security,
-            sondern auch eine \greenemph{ökologische Frage}.
-        \item \greenemph{\strong{Open-Source-Alternativen:}} Viele
-            IoT-Geräte könnten technisch problemlos mit moderner
-            quelloffener Firmware sicherer betrieben werden. Das
-            Einspielen solcher Alternativen sollte für Konsumenten
-            zwingend möglich sein; insbesondere \greenemph{wenn der
-            Hersteller das Produkt nicht mehr mit Updates versorgt}.
-    \end{enumerate}
-\end{frame}
-
 \begin{frame}{Ansätze}
     \begin{columns}
         \begin{column}{0.6\textwidth}
@@ -281,6 +258,30 @@
             }
         \end{column}
     \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Forderungen des Chaos Computer Club}
+    \framesubtitle{\enquote{Update nicht verfügbar: Lieferant nicht zu
+        erreichen}\footnote{\tiny\url{https://www.ccc.de/de/updates/2019/update-nicht-verfugbar-hersteller-nicht-zu-erreichen}}}
+
+    \begin{enumerate}
+        \item \strong{Hersteller-Haftung} für einen fahrlässigen
+            Umgang mit Software-Schwachstellen würde zu gewissenhafter
+            gepflegten Produkten führen. Insbesondere im IoT-Bereich ist
+            „fire and forget“ keine nachhaltige Geschäftsstrategie.
+        \item \strong{Update-Zwang und Mindesthaltbarkeitsdatum:}
+            Mit dem Internet verbundene Geräte sollten für einen
+            garantierten Mindestzeitraum mit Sicherheitsupdates versorgt
+            werden. Das ist nicht nur eine Frage der IT-Security,
+            sondern auch eine \greenemph{ökologische Frage}.
+        \item \greenemph{\strong{Open-Source-Alternativen:}} Viele
+            IoT-Geräte könnten technisch problemlos mit moderner
+            quelloffener Firmware sicherer betrieben werden. Das
+            Einspielen solcher Alternativen sollte für Konsumenten
+            zwingend möglich sein; insbesondere \greenemph{wenn der
+            Hersteller das Produkt nicht mehr mit Updates versorgt}.
+    \end{enumerate}
 \end{frame}
 
 \subsection{Projekte}
@@ -319,23 +320,6 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Rockbox}
-    \begin{columns}[T]
-        \begin{column}{0.45\textwidth}
-            \begin{itemize}
-                \item freies Betriebssystem für MP3-Player unter GPL
-                \item gestartet 2002 für Archos Jukebox
-                \item Support für ca. 40 Devices, auch einige Apple iPod
-                \item Unterstützung zusätzlicher Audio-Codecs
-                \item Port auf Android in Arbeit
-            \end{itemize}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \pgfuseimage{rockbox}
-        \end{column}
-    \end{columns}
-\end{frame}
-
 \begin{frame}{Linux Router}
     \begin{itemize}
         \item OpenWRT, fli4l, IPFire, …
@@ -362,6 +346,23 @@
         \end{column}
         \begin{column}{0.35\textwidth}
             \pgfuseimage{wdr4300}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Rockbox}
+    \begin{columns}[T]
+        \begin{column}{0.45\textwidth}
+            \begin{itemize}
+                \item freies Betriebssystem für MP3-Player unter GPL
+                \item gestartet 2002 für Archos Jukebox
+                \item Support für ca. 40 Devices, auch einige Apple iPod
+                \item Unterstützung zusätzlicher Audio-Codecs
+                \item Port auf Android in Arbeit
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \pgfuseimage{rockbox}
         \end{column}
     \end{columns}
 \end{frame}
