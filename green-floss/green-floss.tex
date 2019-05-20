@@ -101,6 +101,7 @@
 \pgfdeclareimage[width=0.18\textwidth]{fp2}{resources/fairphone/webshop_1428x1428_indigo.jpg}
 \pgfdeclareimage[width=0.48\textwidth]{rockbox}{resources/rockbox/ipodnano2g-front.png}
 \pgfdeclareimage[width=0.3\textwidth]{wdr4300}{resources/openwrt/img_4361.jpg}
+\pgfdeclareimage[width=0.3\textwidth]{sonoff}{resources/sonoff/sonoffbasic.jpg}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% title, author, date
@@ -348,6 +349,24 @@
             \pgfuseimage{wdr4300}
         \end{column}
     \end{columns}
+\end{frame}
+
+\begin{frame}{Sonoff--Tasmota}
+    \pgfuseimage{sonoff}
+    \begin{itemize}
+        \item \enquote{Alternative firmware for ESP8266 based
+            devices}\footnote{\url{https://github.com/arendst/Sonoff-Tasmota}}
+        \item SONOFF: IoT-Geräte für Heimautomatisierung
+        \item Hersteller-Firmware aus China mit Support für
+            Cloud-basierte Dienste von Google oder Amazon
+        \item Freie Firmware mit einfacher Integration in
+            FLOSS-Heimautomation
+            (\href{https://www.openhab.org/}{openHAB},
+            \href{https://www.home-assistant.io/}{HomeAssistant},
+            \href{https://wiki.fhem.de/wiki/Sonoff}{FHEM}, …)
+        \item OTA updates
+        \item aktive Weiterentwicklung
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Rockbox}
