@@ -229,12 +229,12 @@
 \definecolor{c959595}{RGB}{149,149,149}
 
 \begin{tikzpicture}[%
-    y=0.20pt,
-    x=0.20pt,
-    %xscale=0.5,
+    y=0.80pt,
+    x=0.80pt,
     yscale=-1, 
     inner sep=0pt, 
-    outer sep=0pt
+    outer sep=0pt,
+    scale=0.25
 ]
 
   \path[fill=black] (281.0820,246.6060) .. controls (276.3300,266.1900) and
