@@ -1,0 +1,6 @@
+\begin{tikzpicture}[%
+    ]
+    \node { foo };
+\end{tikzpicture}
+
+% vim: ft=tex
