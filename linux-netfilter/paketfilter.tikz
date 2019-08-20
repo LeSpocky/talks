@@ -1,6 +1,26 @@
 \begin{tikzpicture}[%
+        node distance=15mm,
+        text height=1.5ex,
+        text depth=.25ex,
+        chain/.style={
+            % the shape:
+            rounded rectangle,
+            minimum size=6mm,
+            % the rest:
+            very thick,
+            draw=black!50,
+            top color=white,
+            bottom color=black!20,
+            font=\ttfamily
+        },
+        >=stealth, thick
     ]
-    \node { foo };
+
+    \graph [grow right sep, simple] {
+        / -> prerouting[chain] -> eins/dot -> forward[chain] -> zwei/dot -> postrouting[chain] -> /;
+        eins/dot -> input[chain] -> proc -> output[chain] -> zwei/dot -> postrouting;
+    };
+
 \end{tikzpicture}
 
 % vim: ft=tex
