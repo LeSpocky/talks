@@ -1,24 +1,42 @@
 \begin{tikzpicture}[%
-        node distance=15mm,
-        text height=1.5ex,
-        text depth=.25ex,
+        %node distance=15mm,
         chain/.style={
             % the shape:
             rounded rectangle,
-            minimum size=6mm,
             % the rest:
+            very thick,
+            draw=black!50,
+            top color=white,
+            bottom color=black!20,
+            font=\ttfamily,
+            text height=1.5ex,
+            text depth=.25ex,
+        },
+        decision/.style={
+            diamond,
             very thick,
             draw=black!50,
             top color=white,
             bottom color=black!20,
             font=\ttfamily
         },
+        proc/.style={
+            very thick,
+            draw=blue!50,
+            top color=white,
+            bottom color=blue!20,
+            font=\ttfamily,
+            text height=1.5ex,
+            text depth=.25ex,
+        },
         >=stealth, thick
     ]
 
     \graph [grow right sep, simple] {
-        / -> prerouting[chain] -> eins/dot -> forward[chain] -> zwei/dot -> postrouting[chain] -> /;
-        eins/dot -> input[chain] -> proc -> output[chain] -> zwei/dot -> postrouting;
+        / -> prerouting[chain] -> eins/""[decision] -> { 
+            forward[<"routed",chain],
+            input[>"local",chain] -> ["accept"] proc[proc] -> ["generate"] output[chain]
+        } -> zwei/""[decision] -> postrouting[chain] -> /;
     };
 
 \end{tikzpicture}
