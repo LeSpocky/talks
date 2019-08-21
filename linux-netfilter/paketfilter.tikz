@@ -29,14 +29,17 @@
             text height=1.5ex,
             text depth=.25ex,
         },
+        hv path/.style={to path={-| (\tikztotarget)}},
+        vh path/.style={to path={|- (\tikztotarget)}},
         >=stealth, thick
     ]
 
-    \graph [grow right sep, simple] {
-        / -> prerouting[chain] -> eins/""[decision] -> { 
-            forward[<"routed",chain],
-            input[>"local",chain] -> ["accept"] proc[proc] -> ["generate"] output[chain]
-        } -> zwei/""[decision] -> postrouting[chain] -> /;
+    \graph [grow down sep, branch right sep, simple] {
+        / -> prerouting[chain]
+            -> eins/""[decision] -> {
+                forward[chain],
+                input[chain] -> proc[proc] -> output[chain]
+            } -> zwei/""[decision] -> postrouting[chain] -> /;
     };
 
 \end{tikzpicture}
