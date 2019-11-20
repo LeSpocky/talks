@@ -1,0 +1,245 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% documentclass and packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{atbegshi}           % workaround for newer PGF versions
+%\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+%\documentclass[aspectratio=1610,t]{beamer}
+\documentclass[t]{beamer}
+% https://sourceforge.net/tracker/index.php?func=detail&aid=1848912&group_id=92412&atid=600660
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+
+\usepackage[english]{babel}
+\usepackage[babel,english=american,german=guillemets]{csquotes}	% french
+\usepackage{microtype}
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning}
+\usepackage{smartdiagram}
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline}{}
+\usepackage{ulem}
+
+% colors for listings
+\definecolor{lightergray}{gray}{.95}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkerblue}{rgb}{0,0,0.4}
+\definecolor{darkergreen}{rgb}{0,0.4,0}
+\definecolor{darkerred}{rgb}{0.4,0,0}
+
+\usepackage{listings}
+% \lstloadlanguages{HTML,XML}
+\lstset{%
+    basicstyle=\ttfamily\small\mdseries,
+    keywordstyle=\bfseries\color{darkblue},
+    identifierstyle=,
+    commentstyle=\color{darkgray},
+    stringstyle=\itshape\color{darkred},
+    frame=none,
+    showstringspaces=false,
+    tabsize=4,
+    backgroundcolor=\color{lightergray},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% strong emphasis (like in HTML)
+\makeatletter
+\newcommand{\strong}[1]{\@strong{#1}}
+\newcommand{\@@strong}[1]{\textbf{\let\@strong\@@@strong#1}}
+\newcommand{\@@@strong}[1]{\textnormal{\let\@strong\@@strong#1}}
+\let\@strong\@@strong
+\makeatother
+
+% C++ like the C++ FAQ proposes
+% https://isocpp.org/wiki/faq/misc-environmental-issues#latex-macros
+\newcommand{\CXX}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
+\def\CPP{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+
+\newcommand*{\greenemph}[1]{%
+    \tikz[baseline]
+        \node[%
+            rectangle,
+            fill=green!80,
+            rounded corners=0.8mm,
+            inner sep=0.8mm,
+            anchor=base
+        ]{#1};%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% preparations for beamer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useinnertheme{default}
+\useoutertheme{infolines}
+%\usecolortheme[rgb={0.28,0.37,0.52}]{structure}
+\usecolortheme[rgb={0.18,0.23,0.33}]{structure}
+%\usecolortheme{beaver}
+\usefonttheme{structurebold}
+
+%%% Ränder vergrößern für's Café Central
+%\setbeamersize{text margin left=1.2cm}
+%\setbeamersize{text margin right=1.2cm}
+
+%%% let hyperlinks look like hyperlinks
+\hypersetup{%
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=darkblue
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% images
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\pgfdeclareimage[height=0.8\paperheight]{sdg}{sdg}
+%\pgfdeclareimage[width=\textwidth]{sdg}{sdg}
+%\pgfdeclareimage[width=0.18\textwidth]{fp2}{resources/fairphone/webshop_1428x1428_indigo.jpg}
+%\pgfdeclareimage[width=0.48\textwidth]{rockbox}{resources/rockbox/ipodnano2g-front.png}
+%\pgfdeclareimage[width=0.3\textwidth]{wdr4300}{resources/openwrt/img_4361.jpg}
+%\pgfdeclareimage[width=0.3\textwidth]{sonoff}{resources/sonoff/sonoffbasic.jpg}
+%\pgfdeclareimage[width=0.15\textwidth]{dff-logo}{resources/developers-for-future/developers-for-future-logo.png}
+%\pgfdeclareimage[width=0.1\textwidth]{bub-logo}{resources/bits_und_baeume/bits-und-baeume-logo.png}
+%\pgfdeclareimage[width=0.3\textwidth]{cfg-logo}{resources/code_for_germany/CFG_logo.png}
+%\pgfdeclareimage[width=0.3\textwidth]{gruenstreifen-logo}{resources/gruenstreifen/GRUENSTREIFEN_logo-1.png}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% title, author, date
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[fli4l]{fli4l}
+\subtitle{the flexible internet router for linux}
+\author{Alexander Dahl}
+\institute[blog.antiblau.de]{\url{http://blog.antiblau.de/}}
+\date{2019-12-29}
+%\subject{subj}
+%\keywords{FLOSS}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%\begin{frame}
+%    \tableofcontents
+%\end{frame}
+
+
+\section*{Wer?}
+
+\begin{frame}
+    \frametitle{Wer}
+    \framesubtitle{Yet another free software developer \dots}
+
+    \begin{columns}[T]
+        \begin{column}{0.7\textwidth}
+            \begin{block}{Hintergrund}
+                \begin{itemize}
+                    \item benutzt Freie Software seit $\approx 2001$
+                    \item trägt zu Freier Software bei seit $\approx 2003$
+                    \item Diplom-Ingenieur (Mechatronik)
+                    \item arbeitet als Embedded Software Entwickler
+                    \item Mitglied des \href{http://www.netz39.de/}{Netz39}
+                        Hackerspace in Magdeburg
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \pause
+        \begin{column}{0.3\textwidth}
+            \begin{block}{Projekte}
+                \begin{itemize}
+                    \item \href{https://www.fli4l.de/}{fli4l}
+                    %\item \href{https://buildroot.org/}{buildroot}
+                    \item \href{https://ptxdist.org/}{ptxdist}
+                    \item \href{https://github.com/rafaelsteil/libcgi}{libcgi}
+                    %\item \href{https://freifunk.net/}{Freifunk}
+                    \item \href{https://www.kernel.org/}{Linux}
+                    \item \href{https://www.denx.de/wiki/U-Boot/}{U-Boot}
+                \end{itemize}
+            \end{block}
+            \onslide<1->
+            \input{../green-floss/tux.tikz}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Was?}
+
+\begin{frame}{F(L)OSS -- Free/Libre and OpenSource Software}
+    \begin{block}{Freie Software nach Definition von GNU, FSF, FSFE}
+        \begin{description}
+            \item[Freiheit 1] \strong{Verwenden.} {\small Die Freiheit,
+                das Programm auszuführen wie man möchte, für jeden
+                Zweck.}
+            \item[Freiheit 2] \strong{Verstehen.} {\small Die Freiheit,
+                die Funktionsweise eines Programms zu untersuchen, und
+                es an seine Bedürfnisse anzupassen.}
+            \item[Freiheit 3] \strong{Verbreiten.} {\small Die Freiheit,
+                Kopien weiterzugeben und damit seinen Mitmenschen zu
+                helfen.}
+            \item[Freiheit 4] \strong{Verbessern.} {\small Die Freiheit,
+                ein Programm zu verbessern, und die Verbesserungen
+                an die Öffentlichkeit weiterzugeben, sodass die
+                gesamte Gesellschaft profitiert.}
+        \end{description}
+    \end{block}
+    \pause
+    \begin{block}{Open Source Software}
+        \begin{itemize}
+            \item Freizügigere Lizenzen (permissive licenses)
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\section{Wie?}
+
+\subsection{Wissen}
+
+\subsection{Ideen und Forderungen}
+
+\subsection{Projekte}
+
+\section*{Was noch?}
+
+\begin{frame}{Die vorletzte Folie}
+    \begin{block}{Kontakt}
+        \begin{description}[Twitter]
+            \item [E-Mail] \href{mailto:post@lespocky.de}{post@lespocky.de}
+            \item [WWW] \href{http://www.lespocky.de/}{lespocky.de} or
+                    \href{http://blog.antiblau.de/}{blog.antiblau.de}
+            \item [Twitter] \href{https://twitter.com/LeSpocky}{@LeSpocky}
+        \end{description}
+    \end{block}
+    \begin{block}{Folien}
+        \begin{itemize}
+            \item \texttt{git clone https://github.com/LeSpocky/talks.git}
+        \end{itemize}
+    \end{block}
+    \begin{block}{Lizenz}
+        Dieses Werk ist lizenziert unter einer
+        \href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons
+        Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International
+        Lizenz}.
+    \end{block}
+\end{frame}
+
+%\appendix
+
+\begin{frame}{Lizenzen}
+    \begin{block}{The Linux Mascot}
+        Penguin Tux by \href{mailto:lewing@isc.tamu.edu}{Larry Ewing}
+        and \href{http://isc.tamu.edu/~lewing/linux/}{The GIMP},
+        vectorized by \href{http://www.home.unix-ag.org/simon/}{Simon Budig},
+        converted to TikZ by
+        \href{http://www.texample.net/weblog/2012/apr/28/tux-tex-tikz/}{Stefan Kottwitz}.
+    \end{block}
+\end{frame}
+
+\end{document}
