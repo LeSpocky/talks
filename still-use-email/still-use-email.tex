@@ -13,6 +13,7 @@
 \usepackage[babel,english=american,german=guillemets]{csquotes}	% french
 \usepackage{microtype}
 \usepackage{tikz}
+\usepackage[normalem]{ulem}
 
 % colors for listings
 \definecolor{lightergray}{gray}{.95}
@@ -71,13 +72,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% images
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\pgfdeclareimage[width=\textwidth]{officecalc1}{screenshot_libreoffice_calc_1.png}
-%\pgfdeclareimage[width=\textwidth]{firefox1}{screenshot_firefox_1.png}
-%\pgfdeclareimage[width=\textwidth]{inkscape1}{screenshot_inkscape_1.png}
-%\pgfdeclareimage[height=0.8\paperheight]{vlc1}{screenshot_vlc_1.png}
-%\pgfdeclareimage[height=0.7\paperheight]{gimp1}{screenshot_gimp_1.png}
-%\pgfdeclareimage[width=\textwidth]{okular1}{screenshot_okular_1.png}
-%\pgfdeclareimage[width=\textwidth]{thunderbird1}{screenshot_thunderbird_1.png}
+%\pgfdeclareimage[width=\textwidth]{mariah}{a8559eV_700bwp.png}
+\pgfdeclareimage[height=0.7\paperheight]{mariah}{a8559eV_700bwp.png}
+\pgfdeclareimage[width=0.4\textwidth]{moses}{3orieMV7DiDXjTWBwI.png}
+\pgfdeclareimage[height=0.9\paperheight]{mutt}{Screenshot_20231216_163358.png}
 
 %\titlegraphic{%
 %    \input{../logo/netz39-figonly-title.tikz}
@@ -90,7 +88,7 @@
 \subtitle{Why a >30 year old technology is the most efficient way to develop the Linux kernel}
 \author{Alexander Dahl}
 \institute[lespocky.de]{\url{http://www.lespocky.de/}}
-\date{2017-05-22}
+\date{2023-12-16 \sout{2017-05-22}}
 \subject{subj}
 \keywords{Linux, E-Mail}
 
@@ -116,7 +114,7 @@
                 \item lots of changes (7--8 changes an hour / 24 hours a day)
                 \item Git
                 \item E-Mail
-                \item (patchwork)
+                \item (patchwork, lore, b4)
                 \item open mailing lists
                 \item open history
             \end{itemize}
@@ -127,34 +125,43 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{Alternatives Suck}
+\begin{frame}{Alternatives Do Not Scale}
     \begin{itemize}
-        \item Github, bitbucket, gitlab, …
-        \item Gerrit
-        \item …
+        \item Github, bitbucket, gitlab, Gerrit, …
     \end{itemize}
+    \pgfuseimage{mariah}\footnote{\tiny\url{https://9gag.com/gag/a8559eV}}
 \end{frame}
 
 \begin{frame}{E-Mail}
-    \begin{exampleblock}{Pro}
-        \begin{itemize}
-            \item everyone has it
-            \item no online access required
-            \item internationalization and accessibility
-            \item fast patch review
-            \item free choice between numerous clients
-            \item local testing easy
-            \item everyone can review
-            \item trains others on your team
-        \end{itemize}
-    \end{exampleblock}
-    \pause
-    \begin{alertblock}{Con}
-        \begin{itemize}
-            \item project managers don't understand it
-            \item people use crappy MUAs
-        \end{itemize}
-    \end{alertblock}
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{exampleblock}{Pro}
+                \begin{itemize}
+                    \item everyone has it
+                    \item no online access required
+                    \item internationalization and accessibility
+                    \item fast patch review
+                    \item free choice between numerous clients
+                    \item local testing easy
+                    \item everyone can review
+                    \item trains others on your team
+                \end{itemize}
+            \end{exampleblock}
+            \begin{alertblock}{Con}
+                \begin{itemize}
+                    \item project managers don't understand it
+                    \item people use crappy MUAs
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \pgfuseimage{moses}\footnote{\tiny\url{https://giphy.com/gifs/season-2-the-simpsons-2x13-3orieMV7DiDXjTWBwI}}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{One MUA just sucks less}
+    \pgfuseimage{mutt}
 \end{frame}
 
 \section{Legal}
